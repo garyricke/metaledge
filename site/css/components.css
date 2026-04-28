@@ -1740,5 +1740,24 @@ section[id] {
   inset: 0;
   background-size: cover;
   background-position: center 30%;
-  opacity: 0.35;
+  opacity: 0.45;
 }
+.careers-page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(14,24,41,0.82) 50%, rgba(14,24,41,0.4));
+}
+.careers-page-hero__content {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-16);
+}
+.careers-page-hero h1,
+.careers-page-hero h2,
+.careers-page-hero h3 { color: var(--white); }
+.careers-page-hero p,
+.careers-page-hero .lede { color: rgba(255,255,255,0.82); }
+.careers-page-hero .stat__value { color: var(--copper-400); }
+.careers-page-hero .stat__label { color: rgba(255,255,255,0.55); }

@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#152239">
+  <title>Brand Guidelines · Metal Edge</title>
+  <meta name="description" content="The Metal Edge design system: brand foundation, logo usage, color, typography, spacing, components, voice, photography, and code tokens.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/branding-guide.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon-metal-edge.svg">
+</head>
+<body class="bg-page">
+
+<!-- ============== NAV ============== -->
+<header class="nav is-scrolled" id="nav" style="position: sticky;">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/images/logos/Metal-Edge-Logo-on-dark.svg" alt="Metal Edge" class="nav__brand-mark">
+      <span class="hide-on-mobile">
+        <span class="nav__brand-text">Metal Edge</span>
+        <span class="nav__brand-sub">Brand Guidelines · v1.0</span>
+      </span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__menu">
+        <li><a href="index.html" class="nav__link">Landing Page</a></li>
+        <li><a href="#color" class="nav__link">Color</a></li>
+        <li><a href="#type" class="nav__link">Type</a></li>
+        <li><a href="#components" class="nav__link">Components</a></li>
+      </ul>
+    </nav>
+    <a href="index.html" class="btn btn--inverse btn--sm hide-on-mobile">View Live Page →</a>
+  </div>
+</header>
+
+<!-- ============== HERO ============== -->
+<section class="hero" style="min-height: 460px; padding-top: 88px;">
+  <div class="hero__bg" aria-hidden="true">
+    <img src="assets/images/placeholders/hero-pattern.svg" alt="">
+  </div>
+  <div class="container hero__inner" style="max-width: 900px;">
+    <span class="eyebrow hero__eyebrow">Design System · v1.0 · Issued 2026</span>
+    <h1 class="hero__title" style="font-size: clamp(var(--fs-3xl), 5vw, var(--fs-5xl));">Brand Guidelines</h1>
+    <p class="hero__sub">The visual and verbal language of Metal Edge — sharpened from the Olsson Roofing parent brand to support a best-in-class digital presence in architectural sheet metal.</p>
+  </div>
+</section>
+
+<!-- ============== BODY ============== -->
+<div class="container" style="padding-block: var(--space-16);">
+  <div class="bg-layout">
+
+    <!-- ----- TOC (sticky) ----- -->
+    <aside class="bg-toc" aria-label="Sections">
+      <a href="#foundation">01 · Foundation</a>
+      <a href="#logo">02 · Logo</a>
+      <a href="#color">03 · Color</a>
+      <a href="#type">04 · Typography</a>
+      <a href="#spacing">05 · Spacing</a>
+      <a href="#components">06 · Components</a>
+      <a href="#voice">07 · Voice &amp; Tone</a>
+      <a href="#photo">08 · Photography</a>
+      <a href="#tokens">09 · Code Tokens</a>
+      <a href="#landing">10 · Landing Page Design</a>
+      <a href="#landing-etools">10.10 · E-Tools</a>
+    </aside>
+
+    <main>
+
+      <!-- ===== 01 FOUNDATION ===== -->
+      <section class="bg-section" id="foundation">
+        <header class="bg-section__head">
+          <span class="bg-section__num">§ 01</span>
+          <h2>Foundation</h2>
+        </header>
+
+        <div class="split">
+          <div>
+            <h3>Who we are</h3>
+            <p>Metal Edge is the architectural sheet metal division of <a href="https://www.olssonroofing.com/">Olsson Roofing</a>, an ESOP-owned, 100-year-old commercial roofing contractor based in Aurora, Illinois. We design, fabricate, and install architectural metal systems — coping, fascia, wall panels, standing seam, ACM, IMP — for owners, GCs, and architects across the Midwest.</p>
+            <h3>What we believe</h3>
+            <p>Most roofs don't fail at the membrane. They fail at the edge. So the edge is where everything else has to be right — the engineering, the fabrication, the tested certification, the install crew. The edge is our name because it's the part nobody else takes seriously enough.</p>
+            <h3>How we sound</h3>
+            <p>Direct. Technical. Measured. Confident without bluster. We let proof do the persuading.</p>
+          </div>
+          <div class="grid grid-2-fixed grid-tight">
+            <div class="stat" style="padding: var(--space-5); background: var(--white); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+              <div class="stat__value">1925</div>
+              <div class="stat__label">Founded</div>
+            </div>
+            <div class="stat" style="padding: var(--space-5); background: var(--white); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+              <div class="stat__value">100<span class="stat__suffix">%</span></div>
+              <div class="stat__label">Employee-owned</div>
+            </div>
+            <div class="stat" style="padding: var(--space-5); background: var(--white); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+              <div class="stat__value">95<span class="stat__suffix">%</span></div>
+              <div class="stat__label">In-house fabrication</div>
+            </div>
+            <div class="stat" style="padding: var(--space-5); background: var(--white); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+              <div class="stat__value">ES-1</div>
+              <div class="stat__label">Certified perimeter systems</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 02 LOGO ===== -->
+      <section class="bg-section" id="logo">
+        <header class="bg-section__head">
+          <span class="bg-section__num">§ 02</span>
+          <h2>Logo</h2>
+        </header>
+
+        <p class="lede">Metal Edge operates under the Olsson Roofing parent brand. Both marks ship in this package. Use the Metal Edge mark on any property focused on architectural metal capabilities; pair with the Olsson mark in the footer / about region.</p>
+
+        <h3 style="margin-top: var(--space-10);">Marks</h3>
+        <div class="grid grid-3 grid-tight">
+          <div>
+            <div class="logo-card logo-card--dark">
+              <img src="assets/images/logos/Metal-Edge-Logo-on-dark.svg" alt="Metal Edge logo on navy">
+            </div>
+            <div class="logo-card__caption">Metal Edge · Primary mark (on dark)</div>
+          </div>
+          <div>
+            <div class="logo-card">
+              <img src="assets/images/logos/Metal-Edge-Logo-on-white.svg" alt="Metal Edge logo on white">
+            </div>
+            <div class="logo-card__caption">Metal Edge · Primary mark (on light)</div>
+          </div>
+          <div>
+            <div class="logo-card">
+              <img src="assets/images/logos/olsson-logo-footer.png" alt="Olsson Roofing logo">
+            </div>
+            <div class="logo-card__caption">Olsson Roofing · Parent mark</div>
+          </div>
+          <div>
+            <div class="logo-card logo-card--dark">
+              <img src="assets/images/logos/olsson-logo-white.png" alt="Olsson white logo on dark">
+            </div>
+            <div class="logo-card__caption">Olsson · Reverse</div>
+          </div>
+          <div>
+            <div class="logo-card">
+              <img src="assets/images/logos/100-years-badge.png" alt="100 years in business badge">
+            </div>
+            <div class="logo-card__caption">Heritage badge · Footer / about</div>
+          </div>
+          <div>
+            <div class="logo-card logo-card--copper">
+              <img src="assets/images/logos/Metal-Edge-Logo-on-dark.svg" alt="Metal Edge on copper">
+            </div>
+            <div class="logo-card__caption">Metal Edge · On copper accent</div>
+          </div>
+          <div>
+            <div class="logo-card" style="background: var(--steel-100);">
+              <img src="assets/images/logos/Metal-Edge-Logo-on-white.svg" alt="Metal Edge on light gray">
+            </div>
+            <div class="logo-card__caption">Metal Edge · On steel-100</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-12);">Clear space &amp; minimum size</h3>
+        <p>Maintain clear space equal to the cap height of "M" on all sides. Never reproduce smaller than 24px wide on screen, 0.5" wide in print. Always use the supplied PNG / SVG; never re-typeset or recolor the wordmark.</p>
+
+        <h3 style="margin-top: var(--space-8);">Don't</h3>
+        <ul>
+          <li>Don't apply effects (drop shadow, outer glow, gradient fills) to the wordmark.</li>
+          <li>Don't recolor outside the approved palette (navy, white, copper).</li>
+          <li>Don't lock the Metal Edge mark up with the Olsson mark; place them in distinct zones.</li>
+          <li>Don't place the wordmark on photographic backgrounds without the approved overlay scrim.</li>
+        </ul>
+      </section>
+
+      <!-- ===== 03 COLOR ===== -->
+      <section class="bg-section" id="color">
+        <header class="bg-section__head">
+          <span class="bg-section__num">§ 03</span>
+          <h2>Color</h2>
+        </header>
+
+        <p class="lede">The palette is anchored by Olsson Navy — confirmed in their custom stylesheet — and sharpened by introducing copper as the brand's distinctive accent. Copper nods to the metal materials Metal Edge installs (copper standing seam, patina facades) and breaks from the blue-and-red monotony that dominates B2B construction marketing.</p>
+
+        <h3 style="margin-top: var(--space-10);">Primary — Navy</h3>
+        <div class="grid grid-4 grid-tight">
+          <div class="swatch-card">
+            <div class="swatch-card__chip is-dark" data-hex="#0A1226" style="background: #0A1226"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Navy 950</span>
+              <span class="swatch-card__token">--navy-950</span>
+              <p class="swatch-card__usage">Footer · deepest backgrounds</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-card__chip is-dark" data-hex="#152239" style="background: #152239"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Navy 900 · PRIMARY</span>
+              <span class="swatch-card__token">--navy-900</span>
+              <p class="swatch-card__usage">Olsson Navy. Dominant brand color, headings on light, dark surfaces.</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-card__chip is-dark" data-hex="#1F3A66" style="background: #1F3A66"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Navy 700</span>
+              <span class="swatch-card__token">--navy-700</span>
+              <p class="swatch-card__usage">Hover states, secondary surfaces</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-card__chip is-dark" data-hex="#2A5290" style="background: #2A5290"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Navy 600</span>
+              <span class="swatch-card__token">--navy-600</span>
+              <p class="swatch-card__usage">Charts, mid-depth panels</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Secondary — Blue ladder</h3>
+        <div class="grid grid-4 grid-tight">
+          <div class="swatch-card">
+            <div class="swatch-card__chip is-dark" data-hex="#3B7FB8" style="background: #3B7FB8"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Blue 500</span>
+              <span class="swatch-card__token">--blue-500</span>
+              <p class="swatch-card__usage">Links, info, illustrative</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-card__chip" data-hex="#75C0D5" style="background: #75C0D5"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Blue 300</span>
+              <span class="swatch-card__token">--blue-300</span>
+              <p class="swatch-card__usage">Inverse text accents</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-card__chip" data-hex="#B2C4DE" style="background: #B2C4DE"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Blue 100</span>
+              <span class="swatch-card__token">--blue-100</span>
+              <p class="swatch-card__usage">Soft backgrounds, footer text</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-card__chip" data-hex="#E8EEF7" style="background: #E8EEF7"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Blue 050</span>
+              <span class="swatch-card__token">--blue-050</span>
+              <p class="swatch-card__usage">Section tints</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Accent — Copper</h3>
+        <p style="max-width: 60ch;"><strong>This is the move that elevates the brand.</strong> A material-anchored copper accent gives Metal Edge a distinctive identity in a category dominated by red-and-blue construction palettes — and references the copper standing seam systems they install.</p>
+        <div class="grid grid-4 grid-tight" style="margin-top: var(--space-4);">
+          <div class="swatch-card">
+            <div class="swatch-card__chip is-dark" data-hex="#8C4F1E" style="background: #8C4F1E"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Copper 700</span>
+              <span class="swatch-card__token">--copper-700</span>
+              <p class="swatch-card__usage">Hover state of primary CTA</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-card__chip is-dark" data-hex="#C8732D" style="background: #C8732D"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Copper 500 · ACCENT</span>
+              <span class="swatch-card__token">--copper-500</span>
+              <p class="swatch-card__usage">Primary CTAs, eyebrows, key stats, highlights</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-card__chip" data-hex="#E8B080" style="background: #E8B080"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Copper 300</span>
+              <span class="swatch-card__token">--copper-300</span>
+              <p class="swatch-card__usage">Selection backgrounds, soft accents</p>
+            </div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-card__chip" data-hex="#F7E2CD" style="background: #F7E2CD"></div>
+            <div class="swatch-card__body">
+              <span class="swatch-card__name">Copper 100</span>
+              <span class="swatch-card__token">--copper-100</span>
+              <p class="swatch-card__usage">Badge backgrounds, hover row</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Neutrals — Steel</h3>
+        <div class="grid grid-4 grid-tight">
+          <div class="swatch-card"><div class="swatch-card__chip is-dark" data-hex="#0F1722" style="background: #0F1722"></div><div class="swatch-card__body"><span class="swatch-card__name">Steel 950</span><span class="swatch-card__token">--steel-950</span></div></div>
+          <div class="swatch-card"><div class="swatch-card__chip is-dark" data-hex="#2A3441" style="background: #2A3441"></div><div class="swatch-card__body"><span class="swatch-card__name">Steel 800</span><span class="swatch-card__token">--steel-800</span></div></div>
+          <div class="swatch-card"><div class="swatch-card__chip is-dark" data-hex="#525E6B" style="background: #525E6B"></div><div class="swatch-card__body"><span class="swatch-card__name">Steel 600</span><span class="swatch-card__token">--steel-600</span></div></div>
+          <div class="swatch-card"><div class="swatch-card__chip is-dark" data-hex="#6B7785" style="background: #6B7785"></div><div class="swatch-card__body"><span class="swatch-card__name">Steel 500</span><span class="swatch-card__token">--steel-500</span><p class="swatch-card__usage">Body muted text</p></div></div>
+          <div class="swatch-card"><div class="swatch-card__chip" data-hex="#B4BCC7" style="background: #B4BCC7"></div><div class="swatch-card__body"><span class="swatch-card__name">Steel 300</span><span class="swatch-card__token">--steel-300</span></div></div>
+          <div class="swatch-card"><div class="swatch-card__chip" data-hex="#D6DBE2" style="background: #D6DBE2"></div><div class="swatch-card__body"><span class="swatch-card__name">Steel 200</span><span class="swatch-card__token">--steel-200</span><p class="swatch-card__usage">Borders</p></div></div>
+          <div class="swatch-card"><div class="swatch-card__chip" data-hex="#EDEFF3" style="background: #EDEFF3"></div><div class="swatch-card__body"><span class="swatch-card__name">Steel 100</span><span class="swatch-card__token">--steel-100</span></div></div>
+          <div class="swatch-card"><div class="swatch-card__chip" data-hex="#F6F8FB" style="background: #F6F8FB; border: 1px solid var(--color-border);"></div><div class="swatch-card__body"><span class="swatch-card__name">Steel 050</span><span class="swatch-card__token">--steel-050</span><p class="swatch-card__usage">Section alt background</p></div></div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Semantic</h3>
+        <div class="grid grid-4 grid-tight">
+          <div class="swatch-card"><div class="swatch-card__chip is-dark" data-hex="#C8102E" style="background: #C8102E"></div><div class="swatch-card__body"><span class="swatch-card__name">Emergency</span><span class="swatch-card__token">--emergency</span><p class="swatch-card__usage">24/7 emergency CTA</p></div></div>
+          <div class="swatch-card"><div class="swatch-card__chip" data-hex="#FFCA10" style="background: #FFCA10"></div><div class="swatch-card__body"><span class="swatch-card__name">Safety</span><span class="swatch-card__token">--safety</span><p class="swatch-card__usage">PPE / safety callouts</p></div></div>
+          <div class="swatch-card"><div class="swatch-card__chip is-dark" data-hex="#1F8B4C" style="background: #1F8B4C"></div><div class="swatch-card__body"><span class="swatch-card__name">Success</span><span class="swatch-card__token">--success</span><p class="swatch-card__usage">Submitted, complete</p></div></div>
+          <div class="swatch-card"><div class="swatch-card__chip is-dark" data-hex="#E07A1F" style="background: #E07A1F"></div><div class="swatch-card__body"><span class="swatch-card__name">Warning</span><span class="swatch-card__token">--warning</span><p class="swatch-card__usage">Caution / pending</p></div></div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Pairing rules</h3>
+        <ul>
+          <li><strong>Copper</strong> only on navy or white grounds — never on Steel 050 or Blue 100 (insufficient contrast).</li>
+          <li><strong>Navy 900</strong> body type on white passes WCAG AA at all sizes. Copper text needs 14pt+ bold for AA.</li>
+          <li><strong>Emergency</strong> red is reserved exclusively for 24/7 emergency service messaging — never for primary marketing CTAs.</li>
+          <li>Avoid placing copper next to safety yellow; they vibrate. Use neutrals to separate.</li>
+        </ul>
+      </section>
+
+      <!-- ===== 04 TYPE ===== -->
+      <section class="bg-section" id="type">
+        <header class="bg-section__head">
+          <span class="bg-section__num">§ 04</span>
+          <h2>Typography</h2>
+        </header>
+
+        <p class="lede">Three families. Each with one job. Display gets the headlines. Body does the reading. Mono does the technical content — specs, codes, dimensions, calculations — so the engineering audience can scan it the way they scan a drawing set.</p>
+
+        <div class="grid grid-3 grid-tight" style="margin-top: var(--space-8);">
+          <div class="type-spec">
+            <span class="preview-label">Display</span>
+            <p class="type-spec__sample" style="font-family: var(--font-display); font-size: var(--fs-4xl); line-height: 1; text-transform: uppercase; letter-spacing: -0.02em; color: var(--navy-900); margin: 0;">Fjalla One</p>
+            <div class="type-spec__meta">
+              <span><strong>Use:</strong> headlines, eyebrows, stats</span>
+              <span><strong>Weight:</strong> 400</span>
+              <span><strong>Source:</strong> Google Fonts</span>
+              <span><strong>Tracking:</strong> -0.02em</span>
+            </div>
+            <p class="type-spec__sample mono" style="font-size: var(--fs-base); margin: 0; color: var(--color-text-muted);">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>0 1 2 3 4 5 6 7 8 9</p>
+          </div>
+
+          <div class="type-spec">
+            <span class="preview-label">Body</span>
+            <p class="type-spec__sample" style="font-family: var(--font-body); font-size: var(--fs-2xl); line-height: 1.2; color: var(--navy-900); margin: 0;">Inter</p>
+            <div class="type-spec__meta">
+              <span><strong>Use:</strong> body, UI labels, forms</span>
+              <span><strong>Weights:</strong> 400 / 500 / 600 / 700</span>
+              <span><strong>Source:</strong> Google Fonts</span>
+              <span><strong>Features:</strong> ss01, cv11</span>
+            </div>
+            <p class="type-spec__sample" style="margin: 0; font-family: var(--font-body); font-size: var(--fs-sm);">The quick brown fox jumps over the lazy dog. 0123456789</p>
+          </div>
+
+          <div class="type-spec">
+            <span class="preview-label">Mono</span>
+            <p class="type-spec__sample mono" style="font-family: var(--font-mono); font-size: var(--fs-2xl); color: var(--copper-500); margin: 0; letter-spacing: 0.02em;">IBM Plex Mono</p>
+            <div class="type-spec__meta">
+              <span><strong>Use:</strong> specs, codes, dimensions</span>
+              <span><strong>Weights:</strong> 400 / 500 / 600</span>
+              <span><strong>Source:</strong> Google Fonts</span>
+              <span><strong>Tracking:</strong> +0.04em uppercase</span>
+            </div>
+            <p class="type-spec__sample mono" style="margin: 0; font-size: var(--fs-sm); color: var(--color-text-muted);">RE-1 / RE-2 / RE-3 · 170 MPH · ANSI/SPRI ES-1</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-12);">Type scale</h3>
+        <div class="preview">
+          <div class="type-scale">
+            <div class="type-scale__row"><span class="type-scale__token">--fs-7xl · 90px</span><span class="type-scale__sample" style="font-size: 90px;">In-house</span></div>
+            <div class="type-scale__row"><span class="type-scale__token">--fs-6xl · 72px</span><span class="type-scale__sample" style="font-size: 72px;">Precision</span></div>
+            <div class="type-scale__row"><span class="type-scale__token">--fs-5xl · 60px</span><span class="type-scale__sample" style="font-size: 60px;">In-Field</span></div>
+            <div class="type-scale__row"><span class="type-scale__token">--fs-4xl · 48px</span><span class="type-scale__sample" style="font-size: 48px;">Heading 1</span></div>
+            <div class="type-scale__row"><span class="type-scale__token">--fs-3xl · 36px</span><span class="type-scale__sample" style="font-size: 36px;">Heading 2</span></div>
+            <div class="type-scale__row"><span class="type-scale__token">--fs-2xl · 30px</span><span class="type-scale__sample" style="font-size: 30px;">Heading 3</span></div>
+            <div class="type-scale__row"><span class="type-scale__token">--fs-xl · 24px</span><span class="type-scale__sample" style="font-size: 24px;">Subheadline</span></div>
+            <div class="type-scale__row"><span class="type-scale__token">--fs-lg · 20px</span><span class="type-scale__sample" style="font-size: 20px; font-family: var(--font-body); text-transform: none; letter-spacing: 0;">Lede / large body</span></div>
+            <div class="type-scale__row"><span class="type-scale__token">--fs-base · 16px</span><span class="type-scale__sample" style="font-size: 16px; font-family: var(--font-body); text-transform: none; letter-spacing: 0;">Body — the workhorse</span></div>
+            <div class="type-scale__row"><span class="type-scale__token">--fs-sm · 14px</span><span class="type-scale__sample" style="font-size: 14px; font-family: var(--font-body); text-transform: none; letter-spacing: 0;">UI / forms / captions</span></div>
+            <div class="type-scale__row"><span class="type-scale__token">--fs-xs · 13px</span><span class="type-scale__sample" style="font-size: 13px; font-family: var(--font-mono); color: var(--copper-500);">SPEC · MONO · CAPTION</span></div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Hierarchy in use</h3>
+        <div class="preview">
+          <span class="eyebrow">Section eyebrow · mono · copper</span>
+          <h2 style="margin-top: var(--space-3);">In-house precision. <em style="font-style: normal; color: var(--copper-500);">In-field security.</em></h2>
+          <p class="lede">A lede in body that sets context for the reader. Lighter color, larger size, narrower measure. This is where the value proposition lives.</p>
+          <p>Body copy returns to base size and full color. Two- to three-paragraph blocks max — break long sections with sub-headings, never with whitespace alone.</p>
+          <p class="spec">FIG · 01 · ANCHOR · MONO CAPTION USED FOR TECHNICAL CALLOUTS</p>
+        </div>
+      </section>
+
+      <!-- ===== 05 SPACING ===== -->
+      <section class="bg-section" id="spacing">
+        <header class="bg-section__head">
+          <span class="bg-section__num">§ 05</span>
+          <h2>Spacing</h2>
+        </header>
+
+        <p class="lede">A 4px base scale, used consistently. Section padding clamps fluidly between mobile and desktop using <code>clamp()</code> on the container utilities — there is no <em>desktop margin</em> separate from a <em>mobile margin</em>.</p>
+
+        <div class="preview" style="margin-top: var(--space-8);">
+          <div class="space-row"><span class="space-row__token"><strong>--space-1</strong></span><span class="space-row__bar" style="width: 4px;"></span><span>4 px</span></div>
+          <div class="space-row"><span class="space-row__token"><strong>--space-2</strong></span><span class="space-row__bar" style="width: 8px;"></span><span>8 px</span></div>
+          <div class="space-row"><span class="space-row__token"><strong>--space-3</strong></span><span class="space-row__bar" style="width: 12px;"></span><span>12 px</span></div>
+          <div class="space-row"><span class="space-row__token"><strong>--space-4</strong></span><span class="space-row__bar" style="width: 16px;"></span><span>16 px</span></div>
+          <div class="space-row"><span class="space-row__token"><strong>--space-6</strong></span><span class="space-row__bar" style="width: 24px;"></span><span>24 px</span></div>
+          <div class="space-row"><span class="space-row__token"><strong>--space-8</strong></span><span class="space-row__bar" style="width: 32px;"></span><span>32 px</span></div>
+          <div class="space-row"><span class="space-row__token"><strong>--space-12</strong></span><span class="space-row__bar" style="width: 48px;"></span><span>48 px</span></div>
+          <div class="space-row"><span class="space-row__token"><strong>--space-16</strong></span><span class="space-row__bar" style="width: 64px;"></span><span>64 px</span></div>
+          <div class="space-row"><span class="space-row__token"><strong>--space-20</strong></span><span class="space-row__bar" style="width: 80px;"></span><span>80 px</span></div>
+          <div class="space-row"><span class="space-row__token"><strong>--space-24</strong></span><span class="space-row__bar" style="width: 96px;"></span><span>96 px</span></div>
+          <div class="space-row"><span class="space-row__token"><strong>--space-32</strong></span><span class="space-row__bar" style="width: 128px;"></span><span>128 px</span></div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Container widths</h3>
+        <ul>
+          <li><code>--container-md</code> · 768px — narrow content, contact forms, single-column reads</li>
+          <li><code>--container-xl</code> · 1200px — default page container</li>
+          <li><code>--container-2xl</code> · 1320px — wide hero / gallery layouts</li>
+          <li><code>--container-prose</code> · 68ch — body paragraph max-width (readability)</li>
+        </ul>
+
+        <h3 style="margin-top: var(--space-8);">Radii</h3>
+        <p>Default is sharp. Buttons, badges, and form inputs use <code>--radius-xs</code> (2px) and <code>--radius-sm</code> (4px) — softer where it helps usability (cards, tools, modals) at <code>--radius-md</code> (6px). Pills and avatars use <code>--radius-pill</code>. <strong>Avoid</strong> heavy rounded-2xl shapes; they dilute the technical/industrial feel.</p>
+      </section>
+
+      <!-- ===== 06 COMPONENTS ===== -->
+      <section class="bg-section" id="components">
+        <header class="bg-section__head">
+          <span class="bg-section__num">§ 06</span>
+          <h2>Components</h2>
+        </header>
+
+        <h3>Buttons</h3>
+        <div class="preview">
+          <div class="cluster" style="gap: var(--space-3);">
+            <button class="btn btn--primary">Primary · Copper</button>
+            <button class="btn btn--navy">Navy</button>
+            <button class="btn btn--secondary">Secondary outline</button>
+            <button class="btn btn--ghost">Ghost</button>
+            <button class="btn btn--emergency">24/7 Emergency</button>
+            <button class="btn btn--primary btn--lg">Large CTA</button>
+            <button class="btn btn--primary btn--sm">Small</button>
+          </div>
+          <div style="background: var(--navy-900); padding: var(--space-5); margin-top: var(--space-4); border-radius: var(--radius-sm);">
+            <button class="btn btn--inverse">Inverse · for dark surfaces</button>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Badges &amp; Pills</h3>
+        <div class="preview">
+          <div class="cluster">
+            <span class="badge">Default</span>
+            <span class="badge badge--copper">Copper</span>
+            <span class="badge badge--navy">Navy</span>
+            <span class="badge badge--success"><span class="badge__dot"></span> Active</span>
+            <span class="badge badge--safety">Safety</span>
+            <span class="badge badge--cert">ANSI/SPRI ES-1</span>
+            <span class="pill">Tool · 01</span>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Stat block</h3>
+        <div class="preview">
+          <div class="grid grid-4 grid-tight">
+            <div class="stat"><div class="stat__value">95<span class="stat__suffix">%</span></div><div class="stat__label">In-house fabrication</div></div>
+            <div class="stat"><div class="stat__value">170<span class="stat__suffix">+ MPH</span></div><div class="stat__label">Tested wind resistance</div></div>
+            <div class="stat"><div class="stat__value">1M<span class="stat__suffix">+ sf</span></div><div class="stat__label">IMP installed</div></div>
+            <div class="stat"><div class="stat__value">200<span class="stat__suffix">ft</span></div><div class="stat__label">Maximum install height</div></div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Spec card</h3>
+        <div class="preview">
+          <article class="spec-card">
+            <div class="spec-card__head">
+              <span class="spec-card__id">RE-1</span>
+              <span class="badge badge--copper">≥ 100 lbs/ft</span>
+            </div>
+            <h4 class="spec-card__title">Membrane Pull-Off</h4>
+            <p style="margin: 0;">Used for ES-1 / capability descriptions. Copper left-border anchors the technical content visually.</p>
+          </article>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Form controls</h3>
+        <div class="preview">
+          <div class="grid grid-2-fixed grid-tight">
+            <div class="field">
+              <label class="field__label">Project ZIP</label>
+              <input class="input mono" value="60446">
+              <span class="field__hint">Mono input for technical / numeric values.</span>
+            </div>
+            <div class="field">
+              <label class="field__label">Membrane</label>
+              <select class="select"><option>TPO</option><option>PVC</option><option>EPDM</option></select>
+            </div>
+            <label class="checkbox-row" style="grid-column: 1 / -1;">
+              <input type="checkbox" checked>
+              <div class="checkbox-row__body">
+                <div class="checkbox-row__title">Coping (RE-3 tested)</div>
+                <div class="checkbox-row__desc">Wall-cap perimeter system — copper border on selected state.</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Output panel</h3>
+        <div class="preview">
+          <div class="output">
+            <div class="output__row"><span class="output__label">Velocity Pressure</span><span class="output__value">23.4 psf</span></div>
+            <div class="output__row"><span class="output__label">Edge GCp</span><span class="output__value">-1.70</span></div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.18); padding-top: var(--space-3); margin-top: var(--space-2);">
+              <span class="output__label">Design Uplift</span>
+              <div class="output__big">62 psf</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Eyebrow + section header</h3>
+        <div class="preview">
+          <span class="eyebrow">Capabilities</span>
+          <h3 style="margin-top: var(--space-3);">Nine systems. One fabricator.</h3>
+          <p class="lede">Section headers always pair an eyebrow (copper, mono, all-caps) with a display headline. Together they signal both the type of content (technical) and the topic (specific).</p>
+        </div>
+      </section>
+
+      <!-- ===== 07 VOICE ===== -->
+      <section class="bg-section" id="voice">
+        <header class="bg-section__head">
+          <span class="bg-section__num">§ 07</span>
+          <h2>Voice &amp; Tone</h2>
+        </header>
+
+        <p class="lede">We're talking to engineers and project managers. Cut the marketing language. Lead with proof. Numbers and certifications carry the persuasive load — adjectives don't.</p>
+
+        <h3 style="margin-top: var(--space-10);">Principles</h3>
+        <ol>
+          <li><strong>Specific over superlative.</strong> "95% in-house" beats "industry-leading."</li>
+          <li><strong>Proof before claim.</strong> Lead with the number, then the implication.</li>
+          <li><strong>Active over passive.</strong> "We test every system" beats "Every system is tested."</li>
+          <li><strong>Technical when it earns trust.</strong> Use ES-1, RE-1/2/3, IBC §1504.5 — your audience knows them.</li>
+          <li><strong>One sentence per idea.</strong> Long sentences hide the proof.</li>
+        </ol>
+
+        <h3 style="margin-top: var(--space-10);">Do / Don't</h3>
+        <div class="voice-grid">
+          <div class="voice-card">
+            <span class="voice-card__label is-do">✓ DO</span>
+            <p>Lead with proof, then implication.</p>
+            <em>"95% in-house. ES-1 certified. Tested to 170+ MPH."</em>
+          </div>
+          <div class="voice-card voice-card--dont">
+            <span class="voice-card__label is-dont">✗ DON'T</span>
+            <p>Start with adjectives that ask the reader to take your word.</p>
+            <em>"Industry-leading commitment to architectural excellence."</em>
+          </div>
+
+          <div class="voice-card">
+            <span class="voice-card__label is-do">✓ DO</span>
+            <p>Name the failure mode.</p>
+            <em>"Most roofs don't fail at the membrane. They fail at the edge."</em>
+          </div>
+          <div class="voice-card voice-card--dont">
+            <span class="voice-card__label is-dont">✗ DON'T</span>
+            <p>Generalize about quality.</p>
+            <em>"Quality you can count on."</em>
+          </div>
+
+          <div class="voice-card">
+            <span class="voice-card__label is-do">✓ DO</span>
+            <p>Specify the audience and the action.</p>
+            <em>"Talk to a Metal Expert" / "Build Your Submittal Package"</em>
+          </div>
+          <div class="voice-card voice-card--dont">
+            <span class="voice-card__label is-dont">✗ DON'T</span>
+            <p>Use generic CTA labels.</p>
+            <em>"Contact Us" / "Learn More"</em>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Words we use</h3>
+        <p>Fabricate · install · spec · profile · perimeter · uplift · test · cert · submittal · cleat · seam · coping · fascia · drip edge · tributary · membrane.</p>
+
+        <h3>Words we don't</h3>
+        <p>Solutions provider · world-class · best-in-class (in marketing copy) · cutting-edge · synergy · turnkey · holistic.</p>
+      </section>
+
+      <!-- ===== 08 PHOTO ===== -->
+      <section class="bg-section" id="photo">
+        <header class="bg-section__head">
+          <span class="bg-section__num">§ 08</span>
+          <h2>Photography</h2>
+        </header>
+
+        <p class="lede">Three categories: <strong>Hero</strong> (drone shots of installed envelopes at golden hour), <strong>Detail</strong> (close-ups of seams, copings, fastening), and <strong>Crew</strong> (PPE-correct workers in action — never staged smiling at camera).</p>
+
+        <div class="grid grid-3 grid-tight" style="margin-top: var(--space-8);">
+          <div>
+            <div style="aspect-ratio: 4/3; background: url('assets/images/projects/insulated-metal-panel.jpg') center/cover; border-radius: var(--radius-md);"></div>
+            <div class="logo-card__caption" style="text-align: left; margin-top: var(--space-2);">Hero · architectural envelope</div>
+          </div>
+          <div>
+            <div style="aspect-ratio: 4/3; background: url('assets/images/projects/standing-seam.jpg') center/cover; border-radius: var(--radius-md);"></div>
+            <div class="logo-card__caption" style="text-align: left; margin-top: var(--space-2);">Detail · standing seam</div>
+          </div>
+          <div>
+            <div style="aspect-ratio: 4/3; background: url('assets/images/projects/safety-shutterstock.jpg') center/cover; border-radius: var(--radius-md);"></div>
+            <div class="logo-card__caption" style="text-align: left; margin-top: var(--space-2);">Crew · PPE-correct, in action</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Treatment</h3>
+        <ul>
+          <li>Photos sit in <code>--radius-md</code> rounded corners (6px) — never circular.</li>
+          <li>Hover state: 1.04× scale + <code>--shadow-lg</code> elevation. No overlay color shift.</li>
+          <li>For hero usage with text overlay, apply the navy gradient overlay (see <code>.hero__bg::after</code> in <code>components.css</code>).</li>
+          <li>Never use unedited stock photography of construction workers; if no real shot exists, use an SVG concept placeholder labeled clearly.</li>
+        </ul>
+
+        <h3 style="margin-top: var(--space-8);">What to shoot</h3>
+        <ul>
+          <li>Drone shots of recent envelope projects (Northwestern Medicine Arhaus, Delnor Hospital).</li>
+          <li>Detail shots showing copper/zinc patina, ES-1 cleat-and-cap, custom routes on ACM.</li>
+          <li>Process: laser measuring on site, in-house shop drawings on screen, fabrication floor.</li>
+          <li>Crew at parapet height with proper fall arrest. Never staged.</li>
+        </ul>
+      </section>
+
+      <!-- ===== 09 TOKENS ===== -->
+      <section class="bg-section" id="tokens">
+        <header class="bg-section__head">
+          <span class="bg-section__num">§ 09</span>
+          <h2>Code Tokens</h2>
+        </header>
+
+        <p class="lede">Tokens live in <code>css/tokens.css</code> as CSS custom properties. Reference them — never hardcode hex or px values in components.</p>
+
+        <h3 style="margin-top: var(--space-8);">Snippet</h3>
+<pre><code>:root {
+  /* Primary */
+  --navy-900:   #152239;     /* Olsson Navy — primary */
+  --navy-950:   #0A1226;
+  --navy-700:   #1F3A66;
+
+  /* Accent */
+  --copper-500: #C8732D;     /* Primary CTA, eyebrows */
+  --copper-700: #8C4F1E;
+  --copper-100: #F7E2CD;
+
+  /* Neutrals */
+  --steel-500:  #6B7785;
+  --steel-200:  #D6DBE2;
+  --steel-050:  #F6F8FB;
+
+  /* Type */
+  --font-display: "Fjalla One", Impact, sans-serif;
+  --font-body:    "Inter", "Helvetica Neue", sans-serif;
+  --font-mono:    "IBM Plex Mono", "SF Mono", monospace;
+
+  /* Spacing (4px base) */
+  --space-4:  1rem;
+  --space-8:  2rem;
+  --space-16: 4rem;
+  --space-32: 8rem;
+}</code></pre>
+
+        <h3 style="margin-top: var(--space-8);">File map</h3>
+        <ul>
+          <li><code>css/tokens.css</code> — color, type, space, radii, shadow, motion, z-index.</li>
+          <li><code>css/base.css</code> — reset, document defaults, typographic primitives, helpers.</li>
+          <li><code>css/layout.css</code> — containers, sections, grids, splits, utilities.</li>
+          <li><code>css/components.css</code> — buttons, cards, nav, hero, forms, badges, stats, footer.</li>
+          <li><code>css/branding-guide.css</code> — page-only styles for this brand guide.</li>
+        </ul>
+
+        <h3 style="margin-top: var(--space-8);">Naming</h3>
+        <p><strong>Color tokens</strong>: <code>--family-shade</code> (e.g. <code>--navy-900</code>, <code>--copper-500</code>). 50/100/300/500/700/900/950 ladder following Tailwind convention so future migration is friction-free.</p>
+        <p><strong>Spacing tokens</strong>: <code>--space-N</code> where N is the multiplier on a 4px base (so <code>--space-8</code> = 32px).</p>
+        <p><strong>Aliases</strong>: Semantic aliases (<code>--color-bg</code>, <code>--color-text</code>, <code>--color-border</code>) reference the underlying scale tokens — change theme by remapping aliases without touching components.</p>
+      </section>
+
+      <!-- ===== 10 LANDING PAGE DESIGN RATIONALE ===== -->
+      <section class="bg-section" id="landing">
+        <header class="bg-section__head">
+          <span class="bg-section__num">§ 10</span>
+          <h2 class="bg-section__title">Landing Page Design Rationale</h2>
+          <p class="bg-section__sub">The strategic and research-backed decisions behind every structural and visual choice on the Metal Edge landing page.</p>
+        </header>
+
+        <!-- 10.1 Strategic Repositioning -->
+        <div class="bg-rule" id="landing-strategy">
+          <h3 class="bg-rule__title">10.1 — Strategic Repositioning: From Roofing to Architectural Enclosure</h3>
+          <p>Metal Edge's portfolio is dominated by facade, cladding, and enclosure work — ACM panels, column covers, wall systems, and specialty metals — yet the original page led with ES-1 roofing compliance messaging. This created a category mismatch: prospects arriving from architect and GC referrals saw a roofing page, not a fabrication and installation specialist.</p>
+          <p>The redesign repositions Metal Edge as an <strong>architectural sheet metal fabricator and installer</strong>. Roofing remains in the capabilities carousel but is no longer the hero narrative. This mirrors how high-performing B2B industrial sites frame specialist divisions: lead with the broadest proof of craft, then depth-sell into specific systems.</p>
+
+          <div class="bg-do-dont">
+            <div class="bg-do">
+              <div class="bg-do__label bg-do__label--do">Repositioned framing</div>
+              <p>"From perimeter coping to multi-dimensional LED-integrated walls — nine systems, one fabricator."</p>
+            </div>
+            <div class="bg-do">
+              <div class="bg-do__label bg-do__label--dont">Original framing (removed)</div>
+              <p>"ES-1 Certified Coping · Wind Uplift Tested · Metal That Holds Your Membrane Down"</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10.2 Page Architecture -->
+        <div class="bg-rule" id="landing-architecture">
+          <h3 class="bg-rule__title">10.2 — Page Architecture &amp; Section Order</h3>
+          <p>The section sequence follows a <strong>trust ladder</strong> — each section earns the next ask. Visitors who arrive skeptical (architects vetting a sub, GCs comparing bids) need proof before they'll engage a form.</p>
+
+          <table style="width:100%; border-collapse: collapse; font-size: var(--fs-sm); margin-top: var(--space-4);">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--color-border);">
+                <th style="text-align:left; padding: var(--space-2) var(--space-3); color: var(--navy-900);">Section</th>
+                <th style="text-align:left; padding: var(--space-2) var(--space-3); color: var(--navy-900);">Visitor Job</th>
+                <th style="text-align:left; padding: var(--space-2) var(--space-3); color: var(--navy-900);">Design Intent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3); font-weight: var(--fw-semibold);">Hero</td>
+                <td style="padding: var(--space-3);">Answer "who is this for?"</td>
+                <td style="padding: var(--space-3);">Full-bleed video establishes craft scale; four key stats anchor credibility immediately below the fold</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3); font-weight: var(--fw-semibold);">Trust Strip</td>
+                <td style="padding: var(--space-3);">Social proof before scroll</td>
+                <td style="padding: var(--space-3);">Known client logos (Northwestern Medicine, Colliers, Arhaus) signal that serious buyers already rely on Metal Edge</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3); font-weight: var(--fw-semibold);">Lifecycle / Advantage</td>
+                <td style="padding: var(--space-3);">Understand the differentiation</td>
+                <td style="padding: var(--space-3);">Three pillars (In-House Fab → Direct Install → Lifecycle Service) explain the vertical integration model competitors can't match</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3); font-weight: var(--fw-semibold);">Capabilities Carousel</td>
+                <td style="padding: var(--space-3);">Confirm capability coverage</td>
+                <td style="padding: var(--space-3);">Full-bleed immersive images prevent the "brochure grid" feel common in competitors; autoplay with manual override respects both passive and active browsing modes</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3); font-weight: var(--fw-semibold);">Project Gallery</td>
+                <td style="padding: var(--space-3);">Validate quality of output</td>
+                <td style="padding: var(--space-3);">Real project photography, not stock. Category badges (Facades, Roofing, Custom) let specifiers self-filter</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3); font-weight: var(--fw-semibold);">Featured Project (Arhaus)</td>
+                <td style="padding: var(--space-3);">Hear it from a peer</td>
+                <td style="padding: var(--space-3);">Video testimonial from Tom Bruick is more persuasive than any written copy. Named crew members (Whippo, Rangel) signal accountability and pride</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3); font-weight: var(--fw-semibold);">Safety</td>
+                <td style="padding: var(--space-3);">Remove a hidden objection</td>
+                <td style="padding: var(--space-3);">GCs and owners carry liability risk for subcontractor incidents. OSHA partnership and named safety leadership address this before it becomes a deselection reason</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3); font-weight: var(--fw-semibold);">E-Tools</td>
+                <td style="padding: var(--space-3);">Engage active specifiers</td>
+                <td style="padding: var(--space-3);">Submittal Wizard and Color Visualizer create reasons to return and signals to the sales team that a prospect is active</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3); font-weight: var(--fw-semibold);">About / ESOP</td>
+                <td style="padding: var(--space-3);">Understand who they're hiring</td>
+                <td style="padding: var(--space-3);">Employee ownership is a genuine differentiator — ESOP-owned companies statistically outperform on retention and quality consistency</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-3); font-weight: var(--fw-semibold);">Contact / CTA</td>
+                <td style="padding: var(--space-3);">Convert</td>
+                <td style="padding: var(--space-3);">Copper section color signals a decisive moment; form is short enough to complete in 90 seconds; Interest checkboxes pre-qualify the lead for routing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 10.3 Hero -->
+        <div class="bg-rule" id="landing-hero">
+          <h3 class="bg-rule__title">10.3 — Hero: Full-Bleed Video Background</h3>
+          <p>Static hero images are the industry default for specialty contractors. A looped, muted video background communicates scale and craft at a glance — the kind of motion that a photo of a finished panel wall cannot. The video is set to <code>autoplay loop muted playsinline</code> with a Cloudinary-hosted poster frame so above-the-fold paint is never blocked by video load time.</p>
+          <p><strong>Opacity &amp; blend mode:</strong> The video overlay uses <code>opacity: 0.55; mix-blend-mode: luminosity</code> — this desaturates the footage slightly so it reads as a textural field rather than a competing image, and ensures the dark navy gradient above it retains enough contrast for WCAG AA text compliance.</p>
+          <p><strong>Stats below the fold line:</strong> Four KPIs (95% in-house, 200+ years combined experience, 2M sq ft IMP, 200 ft max height) appear immediately below the hero CTA. These are the four questions a GC is silently asking within the first 10 seconds: Can they fabricate it? Do they have the experience? What scale have they handled? How high will they go?</p>
+        </div>
+
+        <!-- 10.4 Capabilities Carousel -->
+        <div class="bg-rule" id="landing-carousel">
+          <h3 class="bg-rule__title">10.4 — Capabilities: Full-Bleed Carousel vs. Tile Grid</h3>
+          <p>The original design used a capability tile grid — small cards with icons, matching the pattern used by virtually every regional sheet metal and roofing contractor website. This approach has two problems:</p>
+          <ol style="margin-left: var(--space-6); line-height: var(--lh-relaxed); color: var(--color-text);">
+            <li style="margin-bottom: var(--space-3);">It reduces impressive, large-format metal work to thumbnail-sized representations that do not convey scale or craft quality.</li>
+            <li style="margin-bottom: var(--space-3);">It treats all nine capabilities as equivalent, when the visual story of a multi-story ACM facade is categorically different from a specification list item.</li>
+          </ol>
+          <p>The full-bleed carousel solves both: each slide fills the viewport width, making the photography the product. The autoplay (5s intervals) gives passive visitors a motion signal that the site has depth; the numbered nav strip lets active specifiers jump directly to the system they're evaluating.</p>
+          <p><strong>Autoplay behavior:</strong> Autoplay permanently stops on first user interaction (click or swipe). This follows accessibility best practice — WCAG 2.1 SC 2.2.2 requires users to be able to pause moving content — and also reflects the UX truth that a user who clicks is indicating intent, and interrupting that intent with continued motion is disorienting.</p>
+        </div>
+
+        <!-- 10.5 Color -->
+        <div class="bg-rule" id="landing-color">
+          <h3 class="bg-rule__title">10.5 — Color System: Navy + Copper as Trust + Premium</h3>
+          <p>The palette is deliberately narrow: <strong>navy-900 (#152239)</strong> as the primary surface, <strong>copper-500 (#C8732D)</strong> as the accent, and a set of steel grays for supporting text and borders.</p>
+          <p><strong>Navy:</strong> Dark navy is the conventional color language of precision manufacturing, engineering firms, and commercial building products. It reads as serious, durable, and technically competent — the same category signals used by companies like Nucor, ATAS International, and Metal Sales Manufacturing.</p>
+          <p><strong>Copper:</strong> Copper is the material that distinguishes Metal Edge's premium custom work — literal copper fascia, Cor-Ten accents, specialty patina finishes. Using it as the brand accent anchors the digital identity to the physical craft. It also provides the warmth contrast that prevents the navy palette from reading as cold or generic.</p>
+
+          <div class="bg-swatch-row" style="margin-top: var(--space-6);">
+            <div class="bg-swatch" style="background: var(--navy-950);">
+              <span class="bg-swatch__label">Deep <code>#0E1829</code><br><small>Featured project, safety sections</small></span>
+            </div>
+            <div class="bg-swatch" style="background: var(--navy-900);">
+              <span class="bg-swatch__label">Dark <code>#152239</code><br><small>Primary dark surface</small></span>
+            </div>
+            <div class="bg-swatch" style="background: var(--copper-500);">
+              <span class="bg-swatch__label" style="color: var(--white);">Copper <code>#C8732D</code><br><small>CTAs, accents, highlights</small></span>
+            </div>
+            <div class="bg-swatch" style="background: var(--steel-100); border: 1px solid var(--color-border);">
+              <span class="bg-swatch__label" style="color: var(--navy-900);">Steel <code>#EEF0F3</code><br><small>Alt section, borders</small></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10.6 Typography -->
+        <div class="bg-rule" id="landing-type">
+          <h3 class="bg-rule__title">10.6 — Typography: Display + Mono Pairing</h3>
+          <p><strong>Fjalla One</strong> (display) is a compressed grotesque — the same structural weight as typefaces used in industrial signage and architectural drawings. It reads at a glance from a distance, performs well on dark backgrounds, and has no serif finish that would soften or feminize the brand.</p>
+          <p><strong>IBM Plex Mono</strong> (monospace) is used for spec labels, eyebrows, stat labels, and system IDs. Its use in a commercial context signals technical precision and references the coding / fabrication spec sheet aesthetic — communicating that Metal Edge works from engineered tolerances, not rough estimates.</p>
+          <p><strong>Inter</strong> (body) is the highest-performing variable sans-serif for on-screen reading at small sizes. At 400–600 weight, it sustains legibility across the dark section backgrounds that make up the majority of the page.</p>
+        </div>
+
+        <!-- 10.7 Competitive Context -->
+        <div class="bg-rule" id="landing-competition">
+          <h3 class="bg-rule__title">10.7 — Competitive Landscape</h3>
+          <p>The following patterns are near-universal in the regional sheet metal and commercial roofing contractor category, and deliberately avoided or subverted in this design:</p>
+
+          <table style="width:100%; border-collapse: collapse; font-size: var(--fs-sm); margin-top: var(--space-4);">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--color-border);">
+                <th style="text-align:left; padding: var(--space-2) var(--space-3); color: var(--navy-900);">Industry Pattern</th>
+                <th style="text-align:left; padding: var(--space-2) var(--space-3); color: var(--navy-900);">Why It's Common</th>
+                <th style="text-align:left; padding: var(--space-2) var(--space-3); color: var(--navy-900);">Metal Edge Approach</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3);">Stock photo hero (generic worker, sky, tools)</td>
+                <td style="padding: var(--space-3);">Low cost, fast to launch</td>
+                <td style="padding: var(--space-3);">Real Vimeo footage from active Metal Edge jobsites</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3);">Service tile grid with icon + 2-line description</td>
+                <td style="padding: var(--space-3);">Easy to update, familiar template</td>
+                <td style="padding: var(--space-3);">Full-bleed carousel with project photography and extended per-system copy</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3);">Generic "Get a Free Quote" CTA</td>
+                <td style="padding: var(--space-3);">Low-friction, familiar</td>
+                <td style="padding: var(--space-3);">"Get a callback within one business hour" — a specific, time-bounded promise</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3);">Blue or red brand palette</td>
+                <td style="padding: var(--space-3);">Trust and urgency associations from other industries applied wholesale</td>
+                <td style="padding: var(--space-3);">Navy + copper tied directly to the physical materials Metal Edge works with</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3);">No safety content</td>
+                <td style="padding: var(--space-3);">Safety is assumed; rarely positioned as a differentiator</td>
+                <td style="padding: var(--space-3);">Dedicated safety section with named OSHA partnership and annual Safetyfest — removes a hidden procurement objection</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border);">
+                <td style="padding: var(--space-3);">No interactive tools</td>
+                <td style="padding: var(--space-3);">Requires ongoing maintenance</td>
+                <td style="padding: var(--space-3);">Submittal Wizard and Kynar Color Visualizer create qualified engagement signals for the sales team</td>
+              </tr>
+              <tr>
+                <td style="padding: var(--space-3);">Employee count or years in business as primary trust signal</td>
+                <td style="padding: var(--space-3);">Easy to produce, universally available</td>
+                <td style="padding: var(--space-3);">ESOP ownership framed as quality alignment ("every crew member is a stakeholder") — a structural reason to believe output quality, not just tenure</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 10.8 Image Delivery -->
+        <div class="bg-rule" id="landing-cdn">
+          <h3 class="bg-rule__title">10.8 — Image Delivery: Cloudinary CDN with Automatic Optimization</h3>
+          <p>All production images are hosted on Cloudinary (<code>cloud: dsbllwpbh</code>, folder <code>metal-edge/</code>) and served with the transformation string <code>f_auto,q_auto</code>. This means:</p>
+          <ul style="margin-left: var(--space-6); line-height: var(--lh-relaxed); color: var(--color-text);">
+            <li style="margin-bottom: var(--space-2);"><strong>f_auto</strong> — Cloudinary delivers WebP to browsers that support it, AVIF where available, falling back to JPEG/PNG. No manual export required.</li>
+            <li style="margin-bottom: var(--space-2);"><strong>q_auto</strong> — Cloudinary's perceptual quality algorithm selects the minimum quality level that a human viewer would not distinguish from the original. Typical savings: 30–70% file size vs. a hand-exported JPEG at fixed quality.</li>
+            <li><strong>SVG exception</strong> — Vector files (Northwestern Medicine logo, brand marks) are served without transformation parameters so Cloudinary does not rasterize them.</li>
+          </ul>
+          <p>Partner logos are served from <code>metal-edge/partnerlogos/</code>. Project images from <code>metal-edge/projects-*</code>. The full upload map is maintained in <code>cloudinary-map.json</code> at the project root.</p>
+        </div>
+
+        <!-- 10.10 E-Tools -->
+        <div class="bg-rule" id="landing-etools">
+          <h3 class="bg-rule__title">10.10 — E-Tools: Why Interactive Specification Tools on a Marketing Page</h3>
+          <p>The E-Tools section — Submittal Wizard, Kynar Color Visualizer, and BIM &amp; CAD Library — is the most unusual structural choice on the page relative to industry norms. Most regional sheet metal and commercial roofing contractors do not publish specification tools publicly. Understanding why Metal Edge does is critical to understanding the page's conversion strategy.</p>
+
+          <h4 style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: var(--tracking-tight); color: var(--navy-900); margin: var(--space-8) 0 var(--space-3);">The Specifier's Problem</h4>
+          <p>Architects and GCs who work with specialty metal contractors face a recurring friction: the administrative overhead of specifying custom metal is disproportionately high relative to the cost of the work. A submittal package for a coping system requires cross-referencing the membrane type, edge profile, clip spacing, wind zone, and finish — typically a back-and-forth process that can take days and involves multiple phone calls or email threads with the fabricator's inside sales team.</p>
+          <p>This friction is an invisible conversion barrier. If the cost of getting a quote involves significant administrative labor, some specifiers will default to a competitor they already have a working relationship with, even if Metal Edge is the better fabricator for the job. The E-Tools section eliminates that barrier.</p>
+
+          <h4 style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: var(--tracking-tight); color: var(--navy-900); margin: var(--space-8) 0 var(--space-3);">Tool · 01 — Submittal Wizard</h4>
+          <p>The Submittal Wizard is a guided 4-step form that walks a specifier through the decisions required to generate a compliant submittal package:</p>
+          <ol style="margin-left: var(--space-6); line-height: var(--lh-relaxed); color: var(--color-text);">
+            <li style="margin-bottom: var(--space-2);"><strong>Step 1 — Membrane:</strong> TPO, PVC, EPDM, Modified Bitumen, Built-Up Roof, or Standing Seam. The membrane type determines which edge profiles are compatible and which clip engagement patterns are required.</li>
+            <li style="margin-bottom: var(--space-2);"><strong>Step 2 — Edge Profile:</strong> The system selection (RE-1 Coping, RE-2 Fascia, RE-3 Gravel Stop, Snap-On Fascia, or Custom Fabrication) which drives the engineering spec output.</li>
+            <li style="margin-bottom: var(--space-2);"><strong>Step 3 — Project Details:</strong> Building location (wind zone), parapet height, and linear footage. These inputs inform the load calculation and material quantity estimate.</li>
+            <li><strong>Step 4 — Download:</strong> The completed submittal package, ready for the project file.</li>
+          </ol>
+          <p><strong>Why this matters strategically:</strong> The Wizard compresses what is typically a multi-day process into approximately three minutes. A specifier who completes the wizard has self-qualified — they know what system they need and what quantity. That data arrives with the contact form submission, giving Metal Edge's project managers a warm, pre-specified lead rather than a cold inquiry that requires an intake call before any technical conversation can begin.</p>
+          <p>The "~3 min" badge on the tool header is intentional copy — it names the cost of engagement explicitly and makes it feel negligible. This is a standard conversion technique for tools that require some user effort: naming the time commitment reduces the perceived friction of starting.</p>
+
+          <h4 style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: var(--tracking-tight); color: var(--navy-900); margin: var(--space-8) 0 var(--space-3);">Tool · 02 — Kynar Color Visualizer</h4>
+          <p>The Color Visualizer is an interactive SVG facade rendering with 12 Kynar 500 finish options (PAC-CLAD palette). Users select which building element to paint — Wall Panel, Coping, or Columns — then click a finish to see it applied in real time. The underlying SVG elements (<code>#metalEdgeBuilding</code>, <code>#metalEdgeCoping</code>, <code>#metalEdgeColumn1/2</code>) are updated directly via JavaScript without any network request.</p>
+          <p><strong>Kynar 500 specifically:</strong> Kynar 500 is the industry-standard fluoropolymer finish for architectural metal — specified by architects on virtually every commercial facade project that involves painted metal. The tool speaks that language directly, using PAC-CLAD finish codes that appear verbatim on architectural specification sheets. This signals to an architect or specifications writer that Metal Edge understands how their workflow actually operates.</p>
+          <p><strong>Why an in-page SVG, not a photo-based renderer:</strong> Photo-realistic color tools require a library of photography shot under controlled lighting for every finish combination — expensive and difficult to maintain. An SVG-based schematic renderer is indefinitely maintainable: adding a new finish is a one-line JavaScript array entry. The schematic also avoids the uncanny valley problem of photo-rendered previews where the lighting never quite matches the prospect's mental image of their building.</p>
+          <p><strong>The "Save This Configuration" CTA</strong> at the bottom of the visualizer panel routes to the contact form. A user who has spent time configuring a color scheme has already mentally committed to the product — this is the highest-intent moment on the page to make the next ask.</p>
+
+          <h4 style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: var(--tracking-tight); color: var(--navy-900); margin: var(--space-8) 0 var(--space-3);">Tool · 03 — BIM &amp; CAD Library</h4>
+          <p>The BIM &amp; CAD Library is a searchable, filterable index of downloadable files in Revit (.RVT), AutoCAD (.DWG), and specification PDF formats. Files are organized by system category — Coping, Fascia, ACM, IMP, Standing Seam — with a live search that filters by system name, profile, or size.</p>
+          <p><strong>Why BIM files matter for conversion:</strong> When an architect downloads a Revit family for a specific coping profile, that object enters their project model. Switching to a different fabricator at that point requires re-specifying the detail and potentially redrawing wall sections — a real labor cost. BIM files create switching costs that favor Metal Edge long before a bid is ever submitted. This is the same strategy used by major manufacturers (Metl-Span, ATAS, Kingspan) to maintain specification position: get into the model early, stay in the model.</p>
+          <p><strong>RVT + DWG + PDF:</strong> The three formats cover the three primary specifier workflows. Revit families (.RVT) are used by architects working in BIM environments. AutoCAD (.DWG) is used by structural and MEP engineers who need to coordinate against the envelope. PDFs serve contractors, estimators, and submittal reviewers who need a printed spec without opening a CAD application.</p>
+
+          <h4 style="font-family: var(--font-display); text-transform: uppercase; letter-spacing: var(--tracking-tight); color: var(--navy-900); margin: var(--space-8) 0 var(--space-3);">Collective Strategic Value</h4>
+          <p>Taken together, the three tools accomplish something no amount of marketing copy can: they demonstrate competence through capability. A fabricator who publishes a working submittal wizard, a Kynar palette visualizer, and a searchable BIM library is making a credible claim that they understand how architects and GCs actually work — not just that they want their business.</p>
+          <p>Each tool also creates a natural hand-off point to the sales team. The Wizard's download flow, the Visualizer's "Save This Configuration" CTA, and the BIM Library's download events all represent measurable engagement signals that, in a connected CRM environment, would trigger outreach from a project manager at the moment of highest intent.</p>
+
+          <div class="bg-do-dont">
+            <div class="bg-do">
+              <div class="bg-do__label bg-do__label--do">What the tools signal to a specifier</div>
+              <p>"This company understands my workflow, has prepared for my questions, and has invested in making it easy to specify their product. They are ready to work at my level."</p>
+            </div>
+            <div class="bg-do">
+              <div class="bg-do__label bg-do__label--dont">What the absence of tools signals</div>
+              <p>"Call us for a quote." — Requires the specifier to invest time before receiving any value. Favors incumbents with established relationships over Metal Edge.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10.9 Accessibility -->
+        <div class="bg-rule" id="landing-a11y">
+          <h3 class="bg-rule__title">10.9 — Accessibility Decisions</h3>
+          <ul style="margin-left: var(--space-6); line-height: var(--lh-relaxed); color: var(--color-text);">
+            <li style="margin-bottom: var(--space-3);"><strong>Hero video:</strong> <code>muted</code> is required for autoplay. The video is decorative (no information is conveyed exclusively through it), so no audio track or transcript is required at this layer.</li>
+            <li style="margin-bottom: var(--space-3);"><strong>Featured project video:</strong> Includes a <code>&lt;track kind="captions"&gt;</code> element pointing to <code>assets/captions/arhaus.vtt</code> — verbatim captions from the Tom Bruick interview.</li>
+            <li style="margin-bottom: var(--space-3);"><strong>Carousel:</strong> Autoplay stops permanently on first user interaction (WCAG 2.1 SC 2.2.2). Arrow buttons have <code>aria-label</code> attributes. Nav buttons use <code>aria-current="true"</code> on the active slide.</li>
+            <li style="margin-bottom: var(--space-3);"><strong>Dark sections:</strong> All heading and body text on <code>section--dark</code>, <code>section--deep</code>, and <code>section--copper</code> surfaces explicitly inherits <code>color: var(--color-text-inverse)</code> via extended selector lists in <code>base.css</code>. This was required because the base <code>h1–h6</code> rule sets <code>color: var(--color-text)</code> with higher effective specificity than inherited section color.</li>
+            <li><strong>Partner logos:</strong> Each logo image has a descriptive <code>alt</code> attribute. Logos are presented as grayscale by default to reduce visual competition with primary content; color is revealed on hover as a non-essential enhancement.</li>
+          </ul>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__bottom" style="padding-top: 0; border-top: 0;">
+      <div>Brand Guidelines · v1.0 · 2026 · Metal Edge by Olsson Roofing</div>
+      <div><a href="index.html" style="color: var(--copper-400);">← Return to landing page</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

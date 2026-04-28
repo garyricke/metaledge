@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Architectural facade visualizer — interactive color swap on metal panel system">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1F3A66"/>
+      <stop offset="0.55" stop-color="#3B7FB8"/>
+      <stop offset="1" stop-color="#B2C4DE"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0F1722"/>
+      <stop offset="1" stop-color="#1A222E"/>
+    </linearGradient>
+    <linearGradient id="panel-shade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="0.7" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="1" stop-color="rgba(0,0,0,0.3)"/>
+    </linearGradient>
+    <linearGradient id="reveal-shadow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="rgba(0,0,0,0.0)"/>
+      <stop offset="1" stop-color="rgba(0,0,0,0.35)"/>
+    </linearGradient>
+    <pattern id="seam" x="0" y="0" width="80" height="320" patternUnits="userSpaceOnUse">
+      <rect width="80" height="320" fill="transparent"/>
+      <line x1="80" y1="0" x2="80" y2="320" stroke="rgba(0,0,0,0.18)" stroke-width="2"/>
+      <line x1="80" y1="0" x2="80" y2="320" stroke="rgba(255,255,255,0.08)" stroke-width="1" transform="translate(-2 0)"/>
+    </pattern>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="700" fill="url(#sky)"/>
+  <!-- Ground -->
+  <rect y="700" width="1600" height="300" fill="url(#ground)"/>
+  <!-- Distant horizon buildings -->
+  <g opacity="0.35">
+    <rect x="0"    y="540" width="180" height="160" fill="#0A1226"/>
+    <rect x="180"  y="500" width="140" height="200" fill="#152239"/>
+    <rect x="320"  y="560" width="100" height="140" fill="#0A1226"/>
+    <rect x="1180" y="520" width="140" height="180" fill="#152239"/>
+    <rect x="1320" y="560" width="180" height="140" fill="#0A1226"/>
+    <rect x="1500" y="500" width="100" height="200" fill="#152239"/>
+  </g>
+
+  <!-- Main building mass -->
+  <g>
+    <!-- Building body fill (background metal) -->
+    <rect id="metalEdgeBuilding" x="320" y="220" width="960" height="520" fill="#3B7FB8"/>
+    <!-- Vertical seam pattern overlay -->
+    <rect x="320" y="220" width="960" height="520" fill="url(#seam)"/>
+    <!-- Edge / coping highlight at top -->
+    <rect id="metalEdgeCoping" x="312" y="208" width="976" height="22" fill="#152239"/>
+    <!-- Side shadow -->
+    <rect x="320" y="220" width="960" height="520" fill="url(#reveal-shadow)" opacity="0.45"/>
+    <!-- Bottom shadow under reveal -->
+    <rect x="320" y="220" width="960" height="520" fill="url(#panel-shade)"/>
+    <!-- Window grid -->
+    <g fill="#0A1226" opacity="0.85">
+      <g transform="translate(380 290)">
+        <rect width="120" height="60" rx="2"/>
+      </g>
+      <g transform="translate(540 290)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(700 290)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(860 290)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(1020 290)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(380 410)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(540 410)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(700 410)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(860 410)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(1020 410)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(380 530)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(540 530)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(700 530)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(860 530)"><rect width="120" height="60" rx="2"/></g>
+      <g transform="translate(1020 530)"><rect width="120" height="60" rx="2"/></g>
+    </g>
+    <!-- Window reflections -->
+    <g fill="#75C0D5" opacity="0.4">
+      <rect x="380" y="290" width="60" height="60"/>
+      <rect x="540" y="290" width="60" height="60"/>
+      <rect x="700" y="290" width="60" height="60"/>
+      <rect x="860" y="290" width="60" height="60"/>
+      <rect x="1020" y="290" width="60" height="60"/>
+    </g>
+    <!-- Glass entrance -->
+    <rect x="700" y="640" width="160" height="100" fill="#0A1226"/>
+    <rect x="700" y="640" width="80" height="100" fill="#75C0D5" opacity="0.3"/>
+    <!-- Column covers (foreground accents that match copper accent) -->
+    <rect id="metalEdgeColumn1" x="640" y="640" width="20" height="100" fill="#C8732D"/>
+    <rect id="metalEdgeColumn2" x="900" y="640" width="20" height="100" fill="#C8732D"/>
+  </g>
+
+  <!-- Plaza / paving -->
+  <g opacity="0.7">
+    <line x1="0"    y1="780" x2="1600" y2="780" stroke="#2A3441" stroke-width="1"/>
+    <line x1="0"    y1="830" x2="1600" y2="830" stroke="#2A3441" stroke-width="1"/>
+    <line x1="0"    y1="880" x2="1600" y2="880" stroke="#2A3441" stroke-width="1"/>
+    <line x1="0"    y1="930" x2="1600" y2="930" stroke="#2A3441" stroke-width="1"/>
+    <line x1="800"  y1="740" x2="800"  y2="1000" stroke="#2A3441" stroke-width="1"/>
+    <line x1="600"  y1="740" x2="600"  y2="1000" stroke="#2A3441" stroke-width="1"/>
+    <line x1="1000" y1="740" x2="1000" y2="1000" stroke="#2A3441" stroke-width="1"/>
+  </g>
+
+  <!-- Hot spot label (corner — only visible if you toggle) -->
+  <g opacity="0.0">
+    <text id="placeholderLabel" x="40" y="60" font-family="monospace" fill="#C8732D" font-size="22">PLACEHOLDER · architectural visualizer</text>
+  </g>
+</svg>

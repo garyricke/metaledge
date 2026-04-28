@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Metal Edge — Design Tokens
+   Single source of truth for color, type, spacing, motion.
+   ========================================================================== */
+
+:root {
+  /* --- Color: Navy (primary brand) ----------------------------------- */
+  --navy-950: #0A1226;
+  --navy-900: #152239;   /* PRIMARY — Olsson Navy */
+  --navy-800: #1A2C4A;
+  --navy-700: #1F3A66;
+  --navy-600: #2A5290;
+
+  /* --- Color: Blue (secondary scale) --------------------------------- */
+  --blue-700: #2A5FA0;
+  --blue-500: #3B7FB8;
+  --blue-300: #75C0D5;   /* kept from brand — light cyan */
+  --blue-100: #B2C4DE;   /* kept from brand — soft blue */
+  --blue-050: #E8EEF7;
+
+  /* --- Color: Copper (NEW accent — material reference + distinction) - */
+  --copper-700: #8C4F1E;
+  --copper-500: #C8732D;   /* PRIMARY ACCENT */
+  --copper-400: #D88A4D;
+  --copper-300: #E8B080;
+  --copper-100: #F7E2CD;
+
+  /* --- Color: Steel (neutrals — cool gray ladder) -------------------- */
+  --steel-950: #0F1722;
+  --steel-900: #1A222E;
+  --steel-800: #2A3441;
+  --steel-700: #3D4855;
+  --steel-600: #525E6B;
+  --steel-500: #6B7785;
+  --steel-400: #8B96A4;
+  --steel-300: #B4BCC7;
+  --steel-200: #D6DBE2;
+  --steel-100: #EDEFF3;
+  --steel-050: #F6F8FB;
+  --white:     #FFFFFF;
+
+  /* --- Color: Semantic ----------------------------------------------- */
+  --emergency: #C8102E;     /* 24/7 emergency CTA */
+  --emergency-dark: #8F0A20;
+  --safety:    #FFCA10;     /* PPE / safety callouts */
+  --safety-dark: #B89000;
+  --success:   #1F8B4C;
+  --warning:   #E07A1F;
+
+  /* --- Color: Aliases (semantic role) -------------------------------- */
+  --color-bg:           var(--white);
+  --color-bg-alt:       var(--steel-050);
+  --color-bg-inverse:   var(--navy-900);
+  --color-bg-deep:      var(--navy-950);
+
+  --color-text:         var(--navy-900);
+  --color-text-muted:   var(--steel-600);
+  --color-text-soft:    var(--steel-500);
+  --color-text-inverse: var(--white);
+  --color-text-inverse-muted: var(--blue-100);
+
+  --color-border:       var(--steel-200);
+  --color-border-strong:var(--steel-300);
+  --color-border-inverse: rgba(255, 255, 255, 0.14);
+
+  --color-accent:       var(--copper-500);
+  --color-accent-hover: var(--copper-700);
+  --color-link:         var(--blue-500);
+  --color-link-hover:   var(--blue-700);
+
+  /* --- Typography: Families ------------------------------------------ */
+  --font-display: "Fjalla One", "Impact", "Helvetica Neue", sans-serif;
+  --font-body:    "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+
+  /* --- Typography: Scale (modular, 1.250 ratio at body 16px) ---------- */
+  --fs-3xs: 0.6875rem;   /* 11 */
+  --fs-2xs: 0.75rem;     /* 12 */
+  --fs-xs:  0.8125rem;   /* 13 */
+  --fs-sm:  0.875rem;    /* 14 */
+  --fs-base:1rem;        /* 16 */
+  --fs-md:  1.125rem;    /* 18 */
+  --fs-lg:  1.25rem;     /* 20 */
+  --fs-xl:  1.5rem;      /* 24 */
+  --fs-2xl: 1.875rem;    /* 30 */
+  --fs-3xl: 2.25rem;     /* 36 */
+  --fs-4xl: 3rem;        /* 48 */
+  --fs-5xl: 3.75rem;     /* 60 */
+  --fs-6xl: 4.5rem;      /* 72 */
+  --fs-7xl: 5.625rem;    /* 90 */
+
+  /* --- Typography: Weights ------------------------------------------- */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* --- Typography: Line heights -------------------------------------- */
+  --lh-tight:    1.05;
+  --lh-snug:     1.2;
+  --lh-base:     1.5;
+  --lh-relaxed:  1.65;
+
+  /* --- Typography: Letter-spacing ------------------------------------ */
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-wider:  0.08em;
+  --tracking-mono:   0.02em;
+
+  /* --- Spacing scale (4px base) -------------------------------------- */
+  --space-0:   0;
+  --space-1:   0.25rem;   /* 4  */
+  --space-2:   0.5rem;    /* 8  */
+  --space-3:   0.75rem;   /* 12 */
+  --space-4:   1rem;      /* 16 */
+  --space-5:   1.25rem;   /* 20 */
+  --space-6:   1.5rem;    /* 24 */
+  --space-8:   2rem;      /* 32 */
+  --space-10:  2.5rem;    /* 40 */
+  --space-12:  3rem;      /* 48 */
+  --space-16:  4rem;      /* 64 */
+  --space-20:  5rem;      /* 80 */
+  --space-24:  6rem;      /* 96 */
+  --space-32:  8rem;      /* 128 */
+  --space-40:  10rem;     /* 160 */
+
+  /* --- Layout -------------------------------------------------------- */
+  --container-sm:  640px;
+  --container-md:  768px;
+  --container-lg:  1024px;
+  --container-xl:  1200px;
+  --container-2xl: 1320px;
+  --container-prose: 68ch;
+
+  /* --- Radii --------------------------------------------------------- */
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-pill: 999px;
+
+  /* --- Shadows ------------------------------------------------------- */
+  --shadow-xs:  0 1px 2px rgba(15, 23, 34, 0.06);
+  --shadow-sm:  0 2px 4px rgba(15, 23, 34, 0.07), 0 1px 2px rgba(15, 23, 34, 0.04);
+  --shadow-md:  0 6px 14px rgba(15, 23, 34, 0.08), 0 2px 4px rgba(15, 23, 34, 0.05);
+  --shadow-lg:  0 18px 32px rgba(15, 23, 34, 0.12), 0 4px 8px rgba(15, 23, 34, 0.06);
+  --shadow-xl:  0 30px 60px rgba(15, 23, 34, 0.18), 0 10px 20px rgba(15, 23, 34, 0.08);
+  --shadow-edge: 0 0 0 1px rgba(15, 23, 34, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(200, 115, 45, 0.32);
+
+  /* --- Motion -------------------------------------------------------- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast:   140ms;
+  --duration-base:   220ms;
+  --duration-slow:   360ms;
+  --duration-slower: 560ms;
+
+  /* --- Z-index ------------------------------------------------------- */
+  --z-base:     1;
+  --z-raised:   10;
+  --z-sticky:   100;
+  --z-overlay:  500;
+  --z-modal:    1000;
+  --z-toast:    2000;
+}

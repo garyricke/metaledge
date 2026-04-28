@@ -17,7 +17,6 @@
   let current  = 0;
   let timer    = null;
   let stopped  = false; // permanently stopped by user click
-  let hovered  = false;
 
   // ── Core slide change ──────────────────────────────────────────────
   function goTo(index) {
@@ -64,10 +63,8 @@
     clearInterval(timer);
     if (stopped) return;
     timer = setInterval(() => {
-      if (!hovered) {
-        goTo(current + 1);
-        startProgress();
-      }
+      goTo(current + 1);
+      startProgress();
     }, AUTOPLAY_MS);
   }
 
@@ -100,21 +97,6 @@
       dx < 0 ? goTo(current + 1) : goTo(current - 1);
     }
   }, { passive: true });
-
-  // ── Hover — pause/resume without stopping permanently ─────────────
-  viewport?.addEventListener('mouseenter', () => {
-    if (stopped) return;
-    hovered = true;
-    freezeProgress();
-  });
-  viewport?.addEventListener('mouseleave', () => {
-    if (stopped) return;
-    hovered = false;
-    // Restart from current slide so timing resets cleanly
-    goTo(current);
-    startProgress();
-    scheduleNext();
-  });
 
   // ── Init ───────────────────────────────────────────────────────────
   goTo(0);

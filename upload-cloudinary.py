@@ -6,8 +6,8 @@ import cloudinary
 import cloudinary.uploader
 
 CLOUD   = "dsbllwpbh"
-KEY     = os.environ.get("CLOUDINARY_API_KEY", "533151878225121")
-SECRET  = os.environ.get("CLOUDINARY_API_SECRET", "gTrV4vVExuA5IbkJrwY6WluFQLs")
+KEY     = os.environ.get("CLOUDINARY_API_KEY")
+SECRET  = os.environ.get("CLOUDINARY_API_SECRET")
 FOLDER  = "metal-edge"
 
 cloudinary.config(cloud_name=CLOUD, api_key=KEY, api_secret=SECRET, secure=True)

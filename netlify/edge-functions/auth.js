@@ -1,30 +1,33 @@
-const COOKIE_NAME = "me_preview";
-const COOKIE_DAYS = 30;
+// SHA-256 of the preview password — plaintext never stored here
+// To change the password: echo -n "newpassword" | shasum -a 256
+const PASSWORD_HASH = "180938c40e4f4948c29910014a50500960b94fd62cc8da182da844edc359e2d9";
+const COOKIE_NAME   = "me_preview";
+const COOKIE_TOKEN  = "me_ok_26";
+const COOKIE_DAYS   = 30;
 
 export default async function auth(request, context) {
   const url = new URL(request.url);
 
-  // Pass static assets through
+  // Static assets pass through without auth
   if (/\.(css|js|svg|woff2?|ico|vtt|webmanifest)$/.test(url.pathname)) {
     return context.next();
   }
 
-  const password = Deno.env.get("SITE_PASSWORD") ?? "";
-
   // Handle login form POST
   if (request.method === "POST" && url.pathname === "/_auth/login") {
-    const body = await request.text();
+    const body   = await request.text();
     const params = new URLSearchParams(body);
-    const attempt = params.get("password") ?? "";
+    const attempt  = params.get("password") ?? "";
     const returnTo = params.get("r") ?? "/";
 
-    if (attempt === password) {
-      const token = await sha256(password);
+    const hash = await sha256(attempt);
+
+    if (hash === PASSWORD_HASH) {
       return new Response(null, {
         status: 302,
         headers: {
           Location: returnTo,
-          "Set-Cookie": `${COOKIE_NAME}=${token}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${COOKIE_DAYS * 86400}`,
+          "Set-Cookie": `${COOKIE_NAME}=${COOKIE_TOKEN}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=${COOKIE_DAYS * 86400}`,
         },
       });
     }
@@ -35,13 +38,13 @@ export default async function auth(request, context) {
     });
   }
 
-  // Verify auth cookie
-  const cookie = parseCookie(request.headers.get("cookie") ?? "", COOKIE_NAME);
-  if (cookie && password && cookie === await sha256(password)) {
+  // Check auth cookie
+  const cookieHeader = request.headers.get("cookie") ?? "";
+  if (cookieHeader.includes(`${COOKIE_NAME}=${COOKIE_TOKEN}`)) {
     return context.next();
   }
 
-  // Not authenticated — show login page
+  // Not authenticated
   return new Response(loginPage(false, url.pathname), {
     status: 200,
     headers: { "Content-Type": "text/html; charset=utf-8" },
@@ -56,11 +59,6 @@ async function sha256(value) {
   return Array.from(new Uint8Array(buf))
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
-}
-
-function parseCookie(header, name) {
-  const match = header.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
-  return match ? decodeURIComponent(match[1]) : null;
 }
 
 function loginPage(error, returnTo) {
@@ -84,12 +82,12 @@ function loginPage(error, returnTo) {
     }
     img { height: 48px; width: auto; }
     .label { font-size: 14px; color: rgba(255,255,255,0.55); letter-spacing: 0.04em; }
-    input[type="password"] {
+    input[type=password] {
       width: 100%; padding: 12px 16px;
       border: 1px solid rgba(255,255,255,0.15); border-radius: 4px;
       background: rgba(255,255,255,0.06); color: #fff; font-size: 15px; outline: none;
     }
-    input[type="password"]:focus { border-color: #C8732D; }
+    input[type=password]:focus { border-color: #C8732D; }
     form { width: 100%; display: flex; flex-direction: column; gap: 12px; }
     button {
       width: 100%; padding: 13px; background: #C8732D; color: #fff; border: none;

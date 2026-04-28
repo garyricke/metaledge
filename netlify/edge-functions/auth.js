@@ -4,7 +4,7 @@ const COOKIE_DAYS = 30;
 export default async function auth(request, context) {
   const url = new URL(request.url);
 
-  // Pass static assets through — no auth needed for CSS, JS, SVG, fonts, captions
+  // Pass static assets through
   if (/\.(css|js|svg|woff2?|ico|vtt|webmanifest)$/.test(url.pathname)) {
     return context.next();
   }
@@ -13,12 +13,13 @@ export default async function auth(request, context) {
 
   // Handle login form POST
   if (request.method === "POST" && url.pathname === "/_auth/login") {
-    const form = await request.formData();
-    const attempt = form.get("password") ?? "";
+    const body = await request.text();
+    const params = new URLSearchParams(body);
+    const attempt = params.get("password") ?? "";
+    const returnTo = params.get("r") ?? "/";
 
     if (attempt === password) {
-      const token = await hmac(password, password);
-      const returnTo = url.searchParams.get("r") ?? "/";
+      const token = await sha256(password);
       return new Response(null, {
         status: 302,
         headers: {
@@ -28,7 +29,7 @@ export default async function auth(request, context) {
       });
     }
 
-    return new Response(loginPage(true, url.searchParams.get("r") ?? "/"), {
+    return new Response(loginPage(true, returnTo), {
       status: 200,
       headers: { "Content-Type": "text/html; charset=utf-8" },
     });
@@ -36,7 +37,7 @@ export default async function auth(request, context) {
 
   // Verify auth cookie
   const cookie = parseCookie(request.headers.get("cookie") ?? "", COOKIE_NAME);
-  if (cookie && cookie === await hmac(password, password)) {
+  if (cookie && password && cookie === await sha256(password)) {
     return context.next();
   }
 
@@ -47,21 +48,19 @@ export default async function auth(request, context) {
   });
 }
 
-async function hmac(value, secret) {
-  const key = await crypto.subtle.importKey(
-    "raw",
-    new TextEncoder().encode(secret),
-    { name: "HMAC", hash: "SHA-256" },
-    false,
-    ["sign"]
+async function sha256(value) {
+  const buf = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(value)
   );
-  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(value));
-  return btoa(String.fromCharCode(...new Uint8Array(sig)));
+  return Array.from(new Uint8Array(buf))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
 }
 
 function parseCookie(header, name) {
   const match = header.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
-  return match ? match[1] : null;
+  return match ? decodeURIComponent(match[1]) : null;
 }
 
 function loginPage(error, returnTo) {
@@ -105,11 +104,12 @@ function loginPage(error, returnTo) {
   <div class="box">
     <img src="/assets/images/logos/Metal-Edge-Logo-on-dark.svg" alt="Metal Edge">
     <p class="label">Enter preview password</p>
-    <form method="POST" action="/_auth/login?r=${encodeURIComponent(returnTo)}">
+    <form method="POST" action="/_auth/login">
+      <input type="hidden" name="r" value="${returnTo}">
       <input type="password" name="password" placeholder="Password" autofocus autocomplete="current-password">
       <button type="submit">Enter</button>
     </form>
-    ${error ? '<p class="error">Incorrect password — try again</p>' : ''}
+    ${error ? '<p class="error">Incorrect password — try again</p>' : ""}
   </div>
 </body>
 </html>`;

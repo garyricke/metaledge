@@ -1693,3 +1693,52 @@ section[id] {
   color: var(--copper-600);
   font-weight: var(--fw-semibold);
 }
+
+/* --- Careers image hero (landing page teaser) ---------------------- */
+.careers-teaser-hero {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.careers-teaser-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(14,24,41,0.92) 45%, rgba(14,24,41,0.55));
+}
+.careers-teaser-hero .container {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+.careers-teaser-hero .careers-teaser__copy h2,
+.careers-teaser-hero .careers-teaser__copy p,
+.careers-teaser-hero .careers-teaser__copy .eyebrow {
+  color: var(--white);
+}
+.careers-teaser-hero .careers-teaser__copy .lede {
+  color: rgba(255,255,255,0.8);
+}
+.careers-teaser-hero .careers-role {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+  border-left-color: var(--copper-500);
+}
+.careers-teaser-hero .careers-role__title { color: var(--white); }
+.careers-teaser-hero .careers-role__tag { color: rgba(255,255,255,0.55); }
+.careers-teaser-hero .careers-role--cta { color: var(--copper-400); background: transparent; border-color: transparent; }
+
+/* --- Careers page hero --------------------------------------------- */
+.careers-page-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-950);
+}
+.careers-page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.35;
+}

@@ -1595,7 +1595,7 @@ section[id] {
   background: var(--white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: var(--space-7);
+  padding: var(--space-8);
 }
 .careers-listing__head {
   display: flex;

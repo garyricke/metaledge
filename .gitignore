@@ -4,3 +4,8 @@ __pycache__/
 *.pyc
 .env
 node_modules/
+
+# Binary images — all hosted on Cloudinary
+*.jpg
+*.jpeg
+*.png

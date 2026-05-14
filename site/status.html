@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#152239">
+  <title>Project Status · Metal Edge</title>
+  <meta name="description" content="Build progress and recent updates to the Metal Edge site.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon-metal-edge.svg">
+
+  <style>
+    .status-hero {
+      padding: var(--space-16) 0 var(--space-10);
+      background: var(--navy-900);
+      color: white;
+    }
+    .status-hero h1 {
+      color: white;
+      margin: var(--space-2) 0 var(--space-4);
+    }
+    .status-hero .lede { color: var(--blue-100); max-width: 680px; }
+
+    .timeline {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: var(--space-12) 0;
+    }
+    .timeline__entry {
+      position: relative;
+      padding: var(--space-8) 0 var(--space-8) var(--space-10);
+      border-left: 2px solid var(--steel-200);
+    }
+    .timeline__entry::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: var(--space-9);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--copper-500);
+    }
+    .timeline__entry:last-child { border-left-color: transparent; }
+    .timeline__date {
+      display: block;
+      font-family: var(--ff-mono);
+      font-size: var(--fs-sm);
+      color: var(--copper-500);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-1);
+    }
+    .timeline__title {
+      font-size: var(--fs-xl);
+      color: var(--navy-900);
+      margin: 0 0 var(--space-3);
+    }
+    .timeline__summary {
+      color: var(--color-text-muted);
+      margin: 0 0 var(--space-5);
+    }
+    .timeline__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .timeline__list li {
+      position: relative;
+      padding-left: var(--space-5);
+      margin-bottom: var(--space-3);
+      line-height: var(--lh-relaxed);
+    }
+    .timeline__list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--copper-500);
+      font-weight: var(--fw-semibold);
+    }
+    .timeline__tag {
+      display: inline-block;
+      background: var(--steel-100);
+      color: var(--navy-700);
+      font-family: var(--ff-mono);
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-right: var(--space-2);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .status-legend {
+      display: flex;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      padding: var(--space-4) var(--space-5);
+      background: var(--steel-100);
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-8);
+      font-size: var(--fs-sm);
+      color: var(--color-text-muted);
+    }
+    .status-legend strong { color: var(--navy-900); }
+
+    .launch-callout {
+      background: linear-gradient(135deg, var(--copper-500), var(--copper-700, var(--copper-500)));
+      color: white;
+      padding: var(--space-6) var(--space-8);
+      border-radius: var(--radius-md);
+      margin: 0 auto var(--space-10);
+      max-width: 820px;
+    }
+    .launch-callout__label {
+      display: inline-block;
+      font-family: var(--ff-mono);
+      font-size: var(--fs-sm);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: var(--space-2);
+    }
+    .launch-callout h2 {
+      color: white;
+      margin: 0 0 var(--space-3);
+      font-size: var(--fs-xl);
+    }
+    .launch-callout p {
+      margin: 0;
+      color: rgba(255,255,255,0.92);
+      line-height: var(--lh-relaxed);
+    }
+    .launch-callout p + p { margin-top: var(--space-3); }
+
+    .open-items {
+      max-width: 820px;
+      margin: 0 auto var(--space-12);
+    }
+    .open-items > h2 {
+      color: var(--navy-900);
+      margin: 0 0 var(--space-2);
+    }
+    .open-items > p {
+      color: var(--color-text-muted);
+      margin: 0 0 var(--space-6);
+    }
+    .open-items__group {
+      margin-bottom: var(--space-6);
+    }
+    .open-items__group-title {
+      font-family: var(--ff-mono);
+      font-size: var(--fs-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--copper-500);
+      margin: 0 0 var(--space-3);
+    }
+    .open-items__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .open-items__list li {
+      padding: var(--space-4) var(--space-5);
+      background: white;
+      border: 1px solid var(--steel-200);
+      border-left: 3px solid var(--copper-500);
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-3);
+      line-height: var(--lh-relaxed);
+    }
+    .open-items__list li strong {
+      color: var(--navy-900);
+      display: block;
+      margin-bottom: var(--space-1);
+    }
+    .open-items__owner {
+      display: inline-block;
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-right: var(--space-2);
+      vertical-align: 2px;
+    }
+    .open-items__owner--brian { background: #e8f1ff; color: #1a4480; }
+    .open-items__owner--mike  { background: #fff1e6; color: #8a4400; }
+    .open-items__owner--gary  { background: #efe9ff; color: #4b2e83; }
+    .open-items__owner--future { background: var(--steel-100); color: var(--navy-700); }
+  </style>
+</head>
+<body class="bg-page">
+
+<header class="nav is-scrolled" id="nav" style="position: sticky;">
+  <div class="container nav__inner">
+    <a href="index.html" class="nav__brand" aria-label="Metal Edge — return to home">
+      <img src="assets/images/logos/Metal-Edge-Logo-on-dark.svg" alt="Metal Edge" class="nav__brand-mark">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__menu">
+        <li><a href="index.html#capabilities" class="nav__link">Capabilities</a></li>
+        <li><a href="index.html#projects" class="nav__link">Projects</a></li>
+        <li><a href="index.html#safety" class="nav__link">Safety</a></li>
+        <li><a href="index.html#about" class="nav__link">About</a></li>
+        <li><a href="careers.html" class="nav__link">Careers</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#contact" class="btn btn--primary btn--sm hide-on-mobile">Talk to an Expert</a>
+  </div>
+</header>
+
+<section class="status-hero">
+  <div class="container">
+    <span class="eyebrow" style="color: var(--copper-400);">Internal · Status</span>
+    <h1>Project Status</h1>
+    <p class="lede">Where the Metal Edge site stands today — the launch plan, what's still open, and a log of what's been built so far.</p>
+  </div>
+</section>
+
+<main>
+  <section class="section">
+    <div class="container">
+
+      <div class="launch-callout">
+        <span class="launch-callout__label">Launch Plan</span>
+        <h2>Goal: ship the new site ASAP, then keep improving.</h2>
+        <p>The priority right now is getting the new Metal Edge site live so it can start representing the brand and capturing leads. We're intentionally trimming scope on anything that isn't strictly needed for launch.</p>
+        <p>Most visibly: the <strong>Tools section</strong> (Submittal Wizard, Color Visualizer, BIM &amp; CAD Library) is <strong>hidden by default</strong>. It's not deleted — it stays live behind <a href="index.html?showtools=true#tools"><code>?showtools=true</code></a> for internal review — but it's pulled from the public site, the nav, and the footer so we can launch without waiting on those features to be finished. We'll re-enable and expand them in subsequent rounds.</p>
+      </div>
+
+      <div class="open-items">
+        <h2>Open · Mike's Feedback Round 1</h2>
+        <p>Items still pending from Mike's review and other dependencies that need to clear before / shortly after launch.</p>
+
+        <div class="open-items__group">
+          <div class="open-items__group-title">Blocking / Needed for Launch</div>
+          <ul class="open-items__list">
+            <li>
+              <span class="open-items__owner open-items__owner--brian">Brian</span>
+              <strong>Jotform embed code for the careers application</strong>
+              The current application form on <code>careers.html</code> is a styled mockup. Brian needs to supply the Jotform embed code so we can swap in the real form before launch. Once we have it, the swap is fast.
+            </li>
+          </ul>
+        </div>
+
+        <div class="open-items__group">
+          <div class="open-items__group-title">Waiting on Mike</div>
+          <ul class="open-items__list">
+            <li>
+              <span class="open-items__owner open-items__owner--mike">Mike</span>
+              <strong>Customer logo list — to re-add post-launch</strong>
+              The "Trusted by" customer-logo strip has been <strong>removed for launch</strong> because the previous logos weren't actually Metal Edge customers (they were Olsson's clients). Need Mike's clean list of real Metal Edge customers so we can re-build the logo strip and put it back on the home page after launch.
+            </li>
+            <li>
+              <span class="open-items__owner open-items__owner--mike">Mike</span>
+              <strong>Additional finished-system project photos</strong>
+              Mike mentioned having more cool photos of finished systems and projects. Would strengthen the Projects gallery and capabilities carousel — especially anything that shows standing seam from the top down.
+            </li>
+          </ul>
+        </div>
+
+        <div class="open-items__group">
+          <div class="open-items__group-title">Decisions Needed</div>
+          <ul class="open-items__list">
+            <li>
+              <span class="open-items__owner open-items__owner--gary">Decide</span>
+              <strong>Chris Laube safety quote on the home page</strong>
+              The Olsson director's quote on the home Safety section still references "Local 11" (correct for Olsson, but a mixed signal on a Metal Edge page). Keep as-is, or ask Chris for a Metal Edge-specific quote?
+            </li>
+            <li>
+              <span class="open-items__owner open-items__owner--gary">Decide</span>
+              <strong>CAD Library + ES-1 scope</strong>
+              Mike flagged that the CAD library could be a strong selling point — but also noted competitors could pick it up and reuse it. Need to decide what's public vs gated before we re-enable the Tools section post-launch.
+            </li>
+          </ul>
+        </div>
+
+        <div class="open-items__group">
+          <div class="open-items__group-title">Post-Launch / Future</div>
+          <ul class="open-items__list">
+            <li>
+              <span class="open-items__owner open-items__owner--future">Future</span>
+              <strong>Build out the Submittal Wizard for real</strong>
+              Mike likes the concept — once the launch is out, we can plan a real implementation that generates a single PDF bundling data sheets, ES-1 certs, CAD edge details, flashing diagrams, and SDS docs.
+            </li>
+            <li>
+              <span class="open-items__owner open-items__owner--future">Future</span>
+              <strong>Olsson-side careers parity</strong>
+              Mike likes the Metal Edge careers page (descriptions + apply-in-place flow). Wants something similar for the Olsson Roofing site once Metal Edge is launched.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="status-legend">
+          <div><strong>Content</strong> — copy &amp; imagery updates</div>
+          <div><strong>Feature</strong> — new functionality</div>
+          <div><strong>Fix</strong> — bug or visual fix</div>
+          <div><strong>Infra</strong> — hosting, deploy, auth</div>
+        </div>
+
+        <article class="timeline__entry">
+          <span class="timeline__date">2026-05-14 · In Progress</span>
+          <h2 class="timeline__title">Mike Reynolds feedback — Round 1</h2>
+          <p class="timeline__summary">First round of corrections and refinements after Mike's review of the staging site.</p>
+          <ul class="timeline__list">
+            <li><span class="timeline__tag">Content</span> Updated all union references from "Local 11" to "Sheet Metal Workers Locals 265 &amp; 73" across the home and careers pages. Stat tiles now read <strong>265 / 73</strong>.</li>
+            <li><span class="timeline__tag">Content</span> Clarified ESOP scope — company-wide ownership messaging now correctly credits office, estimating, and project management staff. Field crews highlighted instead as in-house, long-tenured, and not subcontracted.</li>
+            <li><span class="timeline__tag">Content</span> Rewrote the "Install" spec card from "The Crew Is The Owner" to "No Subs. Never Has Been." — accurate framing of the in-house crew advantage.</li>
+            <li><span class="timeline__tag">Content</span> Swapped Slide 04 (Standing Seam) to the red gabled-roof image that actually reads as standing seam.</li>
+            <li><span class="timeline__tag">Content</span> Replaced duplicate standing-seam photo in the Projects gallery with the Rush healthcare facade ("Healthcare Facade Envelope").</li>
+            <li><span class="timeline__tag">Feature</span> <strong>Hid the Tools section for launch readiness.</strong> Submittal Wizard, Color Visualizer, and BIM &amp; CAD Library are pulled from the public site, nav, and footer — accessible at <a href="index.html?showtools=true#tools"><code>?showtools=true</code></a> for internal review. Goal is to get the new site live ASAP and re-enable / expand these in follow-up rounds rather than block launch on them.</li>
+            <li><span class="timeline__tag">Content</span> <strong>Removed the "Trusted by" customer-logo strip from the home page.</strong> The previous logos were Olsson clients, not Metal Edge's — pulled them rather than ship with the wrong customers. Section reframed as "Credentials" with the certification badges (ESOP, CRCA, BBB, OSHA, SMART Locals 265 &amp; 73) retained. Customer logos will be added back post-launch once Mike supplies the real client list.</li>
+            <li><span class="timeline__tag">Feature</span> <strong>New "A" menu in the footer for internal navigation.</strong> The small circled <strong>A</strong> at the bottom-right of the home-page footer opens a discreet dropdown ("Internal Pages") with quick links to <a href="status.html">Status</a> and <a href="branding-guide.html">Brand Guide</a>. Replaces the older inline "Project Status" footer link and keeps internal/admin routes out of the public footer. Easy to extend — new internal pages just plug into the same menu.</li>
+          </ul>
+        </article>
+
+        <article class="timeline__entry">
+          <span class="timeline__date">2026-04-28</span>
+          <h2 class="timeline__title">Initial site launch + first-day polish</h2>
+          <p class="timeline__summary">First version of the Metal Edge marketing site, brand guide, and careers experience — built and refined in a single day.</p>
+          <ul class="timeline__list">
+            <li><span class="timeline__tag">Feature</span> Built the Metal Edge landing page — hero, capabilities carousel, projects gallery, featured project, safety section, About / ESOP section, testimonial, and contact form.</li>
+            <li><span class="timeline__tag">Feature</span> Built the brand guide page (<code>branding-guide.html</code>) covering logo usage, color palette, typography, and voice.</li>
+            <li><span class="timeline__tag">Feature</span> Added the Tools section v1 — Submittal Wizard, Kynar Color Visualizer, and BIM &amp; CAD Library (interactive mockups).</li>
+            <li><span class="timeline__tag">Feature</span> Built the careers experience — home-page teaser plus the full <code>careers.html</code> page with open positions, application form, and benefits grid.</li>
+            <li><span class="timeline__tag">Content</span> Added AI-generated shop hero imagery for the careers sections.</li>
+            <li><span class="timeline__tag">Fix</span> Fixed careers hero text contrast with a dark overlay and white text.</li>
+            <li><span class="timeline__tag">Fix</span> Refined the capabilities carousel — cleaner stop/pause logic; clicks stop autoplay, hover no longer pauses it.</li>
+            <li><span class="timeline__tag">Fix</span> Corrected careers listing padding (invalid spacing token).</li>
+            <li><span class="timeline__tag">Infra</span> Wired up Netlify deployment (publishing from <code>site/</code>) and migrated all imagery to Cloudinary so the repo stays text-only.</li>
+            <li><span class="timeline__tag">Infra</span> Added a password-protected preview gate using a Netlify edge function so the staging URL isn't publicly indexable.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__bottom" style="padding-top: 0; border-top: 0;">
+      <div>© 2026 Metal Edge · Architectural Sheet Metal Division of Olsson Roofing Company</div>
+      <div><a href="index.html" style="color: var(--copper-400);">← Return to home</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

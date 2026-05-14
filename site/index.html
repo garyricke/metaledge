@@ -20,6 +20,19 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon-metal-edge.svg">
+
+  <script>
+    if (new URLSearchParams(window.location.search).get('showtools') === 'true') {
+      document.documentElement.classList.add('show-tools');
+    }
+  </script>
+  <style>
+    html:not(.show-tools) #tools,
+    html:not(.show-tools) a[href="#tools"],
+    html:not(.show-tools) li:has(> a[href="#tools"]) {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -112,40 +125,20 @@
   </div>
 </section>
 
-<!-- ========================== TRUST STRIP ========================== -->
-<section class="section section--tight section--alt" aria-label="Clients and certifications">
+<!-- ========================== CREDENTIALS STRIP ========================== -->
+<section class="section section--tight section--alt" aria-label="Credentials">
   <div class="container">
     <div class="cluster" style="justify-content: space-between; gap: var(--space-8); flex-wrap: wrap;">
       <div>
-        <span class="spec">Trusted by</span>
-        <p style="margin: var(--space-2) 0 0; font-weight: var(--fw-semibold); color: var(--navy-900);">Midwest commercial owners, GCs, and architects.</p>
+        <span class="spec">Credentials</span>
+        <p style="margin: var(--space-2) 0 0; font-weight: var(--fw-semibold); color: var(--navy-900);">Built to commercial standard — owned, certified, and union-trained.</p>
       </div>
       <div class="cluster" style="gap: var(--space-3);">
         <span class="badge badge--cert">ESOP-Owned</span>
         <span class="badge badge--cert">CRCA Member</span>
         <span class="badge badge--cert">A+ BBB</span>
         <span class="badge badge--cert">OSHA Partnership</span>
-        <span class="badge badge--cert">Local 11 Union</span>
-      </div>
-    </div>
-    <div class="logo-strip" style="margin-top: var(--space-8);">
-      <div class="logo-strip__item">
-        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/v1777391071/metal-edge/partnerlogos/logo-Northwestern_Medicine_logo.svg" alt="Northwestern Medicine" class="logo-strip__img">
-      </div>
-      <div class="logo-strip__item">
-        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/v1777391070/metal-edge/partnerlogos/logo-Colliers.jpg" alt="Colliers International" class="logo-strip__img">
-      </div>
-      <div class="logo-strip__item">
-        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/v1777391073/metal-edge/partnerlogos/logo-delnor.jpg" alt="Delnor Hospital" class="logo-strip__img">
-      </div>
-      <div class="logo-strip__item">
-        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/v1777391071/metal-edge/partnerlogos/logo-Elis_Cheesecake.jpg" alt="Eli's Cheesecake" class="logo-strip__img">
-      </div>
-      <div class="logo-strip__item">
-        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/v1777391072/metal-edge/partnerlogos/logo-chicago-jesuit-academy.png" alt="Chicago Jesuit Academy" class="logo-strip__img">
-      </div>
-      <div class="logo-strip__item">
-        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/v1777391069/metal-edge/partnerlogos/logo-Arhaus.jpg" alt="Arhaus" class="logo-strip__img">
+        <span class="badge badge--cert">SMART Locals 265 &amp; 73</span>
       </div>
     </div>
   </div>
@@ -182,10 +175,10 @@
       <article class="spec-card">
         <div class="spec-card__head">
           <span class="spec-card__id">03 · Install</span>
-          <span class="badge badge--copper">ESOP-Owned</span>
+          <span class="badge badge--copper">Our Own Crew</span>
         </div>
-        <h3 class="spec-card__title">The Crew Is The Owner</h3>
-        <p>Olsson is 100% employee-owned. The installer on the parapet at 200 feet is a shareholder. Quality is not a policy here — it's a paycheck.</p>
+        <h3 class="spec-card__title">No Subs. Never Has Been.</h3>
+        <p>Metal Edge doesn't subcontract installation. Fabricators, foremen, and journeymen are trained in-house, paid Locals 265/73 wages, and stay for the long haul. The same hands that built the panel set it on your building.</p>
       </article>
     </div>
   </div>
@@ -247,7 +240,7 @@
       </div>
 
       <div class="cap-showcase__slide" data-index="3">
-        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/v1777390252/metal-edge/projects-standing-seam-roof.jpg" alt="Standing Seam — metal standing seam roof system">
+        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/v1777390253/metal-edge/projects-standing-seam.jpg" alt="Standing Seam — red metal standing seam roof on commercial building">
         <div class="cap-showcase__overlay">
           <div class="cap-showcase__content">
             <span class="cap-showcase__num">04</span>
@@ -375,11 +368,11 @@
         </div>
       </article>
       <article class="project">
-        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/v1777390253/metal-edge/projects-standing-seam.jpg" alt="Standing seam metal roof on commercial building">
+        <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/f_auto,q_auto/v1777390248/metal-edge/projects-metal-wall-system.jpg" alt="Vertical metal wall system on Rush healthcare facility">
         <div class="project__overlay">
           <div>
-            <h3 class="project__title">Mechanical Standing Seam</h3>
-            <div class="project__meta">Steel · Mechanically fastened · Snow retention</div>
+            <h3 class="project__title">Healthcare Facade Envelope</h3>
+            <div class="project__meta">Vertical metal wall · Custom profile · Continuous span</div>
           </div>
         </div>
       </article>
@@ -498,7 +491,7 @@
         <span class="eyebrow">Safety</span>
         <h2 id="safetyHeading">The safest installers in the industry.</h2>
         <p class="lede">At Metal Edge, safety isn't a compliance checkbox — it's the standard every employee-owner holds themselves to, on every project, at every elevation.</p>
-        <p>We maintain an active partnership with OSHA and participate in the National Safety Stand Down. We host our own annual Safetyfest event. Our crews work under Local 11 Union standards and our in-house safety program is audited continuously — because our people are also our owners.</p>
+        <p>We maintain an active partnership with OSHA and participate in the National Safety Stand Down. We host our own annual Safetyfest event. Our crews work under Sheet Metal Workers Locals 265 &amp; 73 standards and our in-house safety program is audited continuously — because every project carries our name.</p>
         <blockquote class="safety__quote">
           <p>"Olsson Roofing Company continues to demonstrate their commitment to the safety and health of their employees by participating with OSHA in events like the National Safety Stand Down."</p>
           <footer>Frank J. Marino, CSP — Industry Safety &amp; Health Expert</footer>
@@ -516,12 +509,12 @@
             <div class="stat__label">Active partnership</div>
           </div>
           <div class="stat">
-            <div class="stat__value">Local<span class="stat__suffix"> 11</span></div>
-            <div class="stat__label">Union-trained crews</div>
+            <div class="stat__value">265<span class="stat__suffix"> / 73</span></div>
+            <div class="stat__label">Sheet Metal Workers Locals</div>
           </div>
           <div class="stat">
             <div class="stat__value">100<span class="stat__suffix">%</span></div>
-            <div class="stat__label">Employee-owned — every crew member is a stakeholder</div>
+            <div class="stat__label">Employee-owned company — every project carries our name</div>
           </div>
           <div class="stat">
             <div class="stat__value">Annual</div>
@@ -867,9 +860,9 @@
     <div class="split">
       <div>
         <span class="eyebrow">About</span>
-        <h2>An ESOP that owns the work.</h2>
-        <p class="lede">Metal Edge is the architectural sheet metal division of Olsson Roofing — a 100% employee-owned company that has been finishing Midwest commercial buildings since 1925. Every shareholder is a craftsman, a project manager, or a foreman.</p>
-        <p>That ownership shows up in the seams. It shows up in the schedule. And it shows up on the facade — where the wrong choice of fabricator becomes a change order, a callback, or a liability claim five years later.</p>
+        <h2>Employee-owned. In-house from drawing to install.</h2>
+        <p class="lede">Metal Edge is the architectural sheet metal division of Olsson Roofing — a 100% employee-owned company that has been finishing Midwest commercial buildings since 1925. Our office, estimating, and project management staff share ownership through the ESOP.</p>
+        <p>Our field crews are our own — trained in-house, paid Locals 265/73 wages, and kept on long-term. We don't subcontract installation. That continuity shows up in the seams, in the schedule, and on the facade — where the wrong choice of fabricator becomes a change order, a callback, or a liability claim five years later.</p>
         <div class="cluster" style="gap: var(--space-4); margin-top: var(--space-6);">
           <a href="#contact" class="btn btn--primary">Talk to a Metal Expert</a>
           <a href="https://www.olssonroofing.com/" class="btn btn--inverse">Visit Olsson Roofing →</a>
@@ -882,7 +875,7 @@
         </div>
         <div class="stat">
           <div class="stat__value">100<span class="stat__suffix">%</span></div>
-          <div class="stat__label">Employee-owned (ESOP)</div>
+          <div class="stat__label">Employee-owned company</div>
         </div>
         <div class="stat">
           <div class="stat__value">200<span class="stat__suffix">+</span></div>
@@ -905,8 +898,8 @@
       <div class="careers-teaser__copy">
         <span class="eyebrow">Careers</span>
         <h2 id="careersHeading">Build something that lasts. Own a piece of it.</h2>
-        <p class="lede">Metal Edge is 100% employee-owned. When you join the crew, you're not just installing metal — you're building equity in the company you work for.</p>
-        <p>We hire journeymen, apprentices, fabricators, estimators, and project managers. Local 11 Union wages. OSHA safety culture. Work you can point to from the street.</p>
+        <p class="lede">Metal Edge is part of a 100% employee-owned company. We don't subcontract our crews — fabricators, foremen, and journeymen are trained in-house and stay for the long haul.</p>
+        <p>We hire journeymen, apprentices, fabricators, estimators, and project managers. Sheet Metal Workers Locals 265 &amp; 73 wages. OSHA safety culture. Work you can point to from the street.</p>
         <div class="cluster" style="gap: var(--space-4); margin-top: var(--space-6);">
           <a href="careers.html" class="btn btn--primary">View Open Positions</a>
           <a href="careers.html#apply" class="btn btn--secondary">Apply Now</a>
@@ -915,7 +908,7 @@
       <div class="careers-teaser__roles">
         <div class="careers-role">
           <span class="careers-role__title">Sheet Metal Journeyman</span>
-          <span class="careers-role__tag">Field · Local 11</span>
+          <span class="careers-role__tag">Field · Locals 265/73</span>
         </div>
         <div class="careers-role">
           <span class="careers-role__title">Sheet Metal Apprentice</span>
@@ -1035,7 +1028,6 @@
           <li><a href="#tools">Color Visualizer</a></li>
           <li><a href="#tools">BIM &amp; CAD Library</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li><a href="branding-guide.html">Brand Guidelines</a></li>
         </ul>
       </div>
 
@@ -1062,6 +1054,34 @@
 
     <div class="footer__bottom">
       <div>© 2026 Metal Edge · Architectural Sheet Metal Division of Olsson Roofing Company</div>
+      <details class="admin-menu">
+        <summary aria-label="Internal pages">A</summary>
+        <div class="admin-menu__panel">
+          <div class="admin-menu__header">Internal Pages</div>
+          <ul class="admin-menu__items">
+            <li>
+              <a href="status.html">
+                <svg class="admin-menu__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                  <path d="M5 20V13M12 20V5M19 20V10M3 20h18"/>
+                </svg>
+                <span>Status</span>
+              </a>
+            </li>
+            <li>
+              <a href="branding-guide.html">
+                <svg class="admin-menu__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3a9 9 0 1 0 0 18c.83 0 1.5-.67 1.5-1.5v-1c0-.83.67-1.5 1.5-1.5h1.5a3.5 3.5 0 0 0 0-7c-.4-3.6-3-7-4.5-7z"/>
+                  <circle cx="7.5" cy="12" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="9.5" cy="7.5" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="14.5" cy="7" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="17" cy="10.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+                <span>Brand Guide</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </details>
     </div>
   </div>
 </footer>
@@ -1075,6 +1095,15 @@
 <script src="js/wind.js" defer></script>
 <script src="js/visualizer.js" defer></script>
 <script src="js/library.js" defer></script>
+
+<script>
+  // Close admin menu when clicking outside
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.admin-menu[open]').forEach((menu) => {
+      if (!menu.contains(e.target)) menu.removeAttribute('open');
+    });
+  });
+</script>
 
 </body>
 </html>

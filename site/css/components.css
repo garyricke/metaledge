@@ -1072,6 +1072,92 @@
 .footer__social a:hover { background: var(--copper-500); color: var(--white); }
 .footer__social svg { width: 16px; height: 16px; }
 
+/* Discreet internal/admin menu */
+.admin-menu {
+  position: relative;
+  display: inline-block;
+}
+.admin-menu > summary {
+  list-style: none;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  opacity: 0.25;
+  transition: opacity var(--duration-fast) var(--ease-out);
+  user-select: none;
+}
+.admin-menu > summary::-webkit-details-marker { display: none; }
+.admin-menu > summary::marker { content: ""; }
+.admin-menu > summary:hover,
+.admin-menu[open] > summary {
+  opacity: 0.7;
+}
+.admin-menu__panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + var(--space-3));
+  background: var(--white);
+  border: 1px solid var(--steel-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  min-width: 260px;
+  box-shadow: 0 12px 36px rgba(15, 30, 60, 0.18);
+  z-index: 100;
+}
+.admin-menu__header {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--steel-500);
+  font-weight: var(--fw-semibold);
+  margin: 0 0 var(--space-4);
+  padding: 0 var(--space-2);
+}
+.admin-menu__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.admin-menu__items li { margin: 0; }
+.admin-menu__items a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-2);
+  color: var(--navy-900);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  letter-spacing: 0;
+  text-transform: none;
+  border-radius: var(--radius-sm);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+.admin-menu__items a:hover {
+  background: var(--steel-100);
+  color: var(--navy-900);
+}
+.admin-menu__icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--steel-500);
+}
+.admin-menu__items a:hover .admin-menu__icon {
+  color: var(--navy-700, var(--navy-900));
+}
+
 /* --- Compliance band ---------------------------------------------- */
 .compliance {
   display: grid;
@@ -1704,7 +1790,7 @@ section[id] {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(14,24,41,0.92) 45%, rgba(14,24,41,0.55));
+  background: linear-gradient(to right, rgba(14,24,41,0.78) 30%, rgba(14,24,41,0.3) 85%, rgba(14,24,41,0.1));
 }
 .careers-teaser-hero .container {
   position: relative;
@@ -1740,13 +1826,12 @@ section[id] {
   inset: 0;
   background-size: cover;
   background-position: center 30%;
-  opacity: 0.45;
 }
 .careers-page-hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(14,24,41,0.82) 50%, rgba(14,24,41,0.4));
+  background: linear-gradient(to right, rgba(14,24,41,0.78) 35%, rgba(14,24,41,0.3) 80%, rgba(14,24,41,0.05));
 }
 .careers-page-hero__content {
   position: relative;

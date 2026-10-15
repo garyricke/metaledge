@@ -270,7 +270,9 @@
       <p class="section-header__sub">Fill out the form below and a member of our team will follow up within two business days. All fields marked required must be completed.</p>
     </div>
 
-    <form class="careers-form" id="careersForm" onsubmit="handleCareersSubmit(event)">
+    <form class="careers-form" id="careersForm" name="career-application-metal" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleCareersSubmit(event)">
+      <input type="hidden" name="form-name" value="career-application-metal">
+      <p hidden><label>Leave this empty: <input name="bot-field"></label></p>
 
       <div class="careers-form__section">
         <h3 class="careers-form__section-title">Your Information</h3>
@@ -407,11 +409,23 @@
 <script>
 function handleCareersSubmit(e) {
   e.preventDefault();
+  const form = document.getElementById('careersForm');
   const btn = document.getElementById('appSubmitBtn');
-  btn.textContent = 'Application submitted — we\'ll be in touch within 2 business days.';
   btn.disabled = true;
-  btn.style.background = 'var(--steel-400)';
-  document.getElementById('careersForm').querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
+  btn.textContent = 'Sending…';
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(form)).toString()
+  }).then(function (r) {
+    if (!r.ok) throw new Error(r.status);
+    btn.textContent = 'Application submitted — we\'ll be in touch within 2 business days.';
+    btn.style.background = 'var(--steel-400)';
+    form.querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
+  }).catch(function () {
+    btn.disabled = false;
+    btn.textContent = 'Something went wrong — please try again or call (708) 756-4696';
+  });
 }
 </script>
 </body>

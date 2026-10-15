@@ -977,28 +977,30 @@
       Tell us what you're building. We'll route you to the right craftsman — fabrication, install, or service — within sixty minutes during business hours.
     </p>
 
-    <form class="stack-3" style="background: var(--white); border-radius: var(--radius-md); padding: var(--space-8); max-width: 600px; margin: var(--space-8) auto 0; text-align: left; box-shadow: var(--shadow-xl);" onsubmit="event.preventDefault(); this.querySelector('button[type=submit]').textContent='Sent — we\'ll be in touch.'; this.querySelector('button[type=submit]').disabled=true;">
+    <form name="metal-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="stack-3" style="background: var(--white); border-radius: var(--radius-md); padding: var(--space-8); max-width: 600px; margin: var(--space-8) auto 0; text-align: left; box-shadow: var(--shadow-xl);" onsubmit="submitContactForm(event)">
+      <input type="hidden" name="form-name" value="metal-contact">
+      <p hidden><label>Leave this empty: <input name="bot-field"></label></p>
       <div class="grid grid-2-fixed grid-tight">
         <div class="field">
           <label for="cf-name" class="field__label">Name</label>
-          <input id="cf-name" class="input" required>
+          <input id="cf-name" name="name" class="input" required>
         </div>
         <div class="field">
           <label for="cf-firm" class="field__label">Firm</label>
-          <input id="cf-firm" class="input" required>
+          <input id="cf-firm" name="firm" class="input" required>
         </div>
         <div class="field">
           <label for="cf-email" class="field__label">Email</label>
-          <input id="cf-email" type="email" class="input" required>
+          <input id="cf-email" name="email" type="email" class="input" required>
         </div>
         <div class="field">
           <label for="cf-phone" class="field__label">Phone</label>
-          <input id="cf-phone" type="tel" class="input">
+          <input id="cf-phone" name="phone" type="tel" class="input">
         </div>
       </div>
       <div class="field">
         <label for="cf-role" class="field__label">I'm a…</label>
-        <select id="cf-role" class="select">
+        <select id="cf-role" name="role" class="select">
           <option>Architect / Specifier</option>
           <option>General Contractor</option>
           <option>Building Owner / Facility Manager</option>
@@ -1007,7 +1009,7 @@
       </div>
       <div class="field">
         <label for="cf-msg" class="field__label">Project</label>
-        <textarea id="cf-msg" class="textarea" placeholder="Building type, sq ft, location, target schedule…"></textarea>
+        <textarea id="cf-msg" name="project" class="textarea" placeholder="Building type, sq ft, location, target schedule…"></textarea>
       </div>
       <fieldset class="contact-form__fieldset">
         <legend class="contact-form__legend">Interest</legend>
@@ -1138,5 +1140,25 @@
   });
 </script>
 
+<script>
+function submitContactForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type=submit]');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(form)).toString()
+  }).then(function (r) {
+    if (!r.ok) throw new Error(r.status);
+    btn.textContent = 'Sent — we\'ll be in touch.';
+  }).catch(function () {
+    btn.disabled = false;
+    btn.textContent = 'Something went wrong — please try again';
+  });
+}
+</script>
 </body>
 </html>

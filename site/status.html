@@ -246,17 +246,6 @@
         <p>Items still pending from Mike's review and other dependencies that need to clear before / shortly after launch.</p>
 
         <div class="open-items__group">
-          <div class="open-items__group-title">Blocking / Needed for Launch</div>
-          <ul class="open-items__list">
-            <li>
-              <span class="open-items__owner open-items__owner--brian">Brian</span>
-              <strong>Jotform embed code for the careers application</strong>
-              The current application form on <code>careers.html</code> is a styled mockup. Brian needs to supply the Jotform embed code so we can swap in the real form before launch. Once we have it, the swap is fast.
-            </li>
-          </ul>
-        </div>
-
-        <div class="open-items__group">
           <div class="open-items__group-title">Waiting on Mike</div>
           <ul class="open-items__list">
             <li>
@@ -313,6 +302,18 @@
           <div><strong>Fix</strong> — bug or visual fix</div>
           <div><strong>Infra</strong> — hosting, deploy, auth</div>
         </div>
+
+        <article class="timeline__entry">
+          <span class="timeline__date">2026-10-15</span>
+          <h2 class="timeline__title">Careers — real Jotform application embedded</h2>
+          <p class="timeline__summary">Brian Rangel sent the Jotform embed for the Metal Edge hiring application ("Metal Edge – Application for Employment"). Launch blocker cleared.</p>
+          <ul class="timeline__list">
+            <li><span class="timeline__tag">Feature</span> Replaced the in-page Netlify application form on <code>careers.html</code> with Brian's Jotform embed (form <code>262805384784165</code>) in the <code>#apply</code> section. Every "Apply" button on the open-positions cards still jumps to it. Applications now land in Metal Edge's own Jotform account, which handles the sensitive hiring fields (W-4 / SSN) Brian set up for.</li>
+            <li><span class="timeline__tag">Content</span> Intro copy trimmed to match ("Fill out the application below…"); added a <code>&lt;noscript&gt;</code> fallback linking directly to the form and the main phone line.</li>
+            <li><span class="timeline__tag">Infra</span> The old <code>career-application-metal</code> Netlify form is no longer on the page. Any notification routing set up for it in the Netlify dashboard can be retired.</li>
+            <li><span class="timeline__tag">Content</span> Olsson side: the Metal Edge landing page (<code>olsson2026/metal-edge.html</code>) "Metal Edge Careers" button now points at the clean <code>/careers#apply</code> URL so it lands directly on the application.</li>
+          </ul>
+        </article>
 
         <article class="timeline__entry">
           <span class="timeline__date">2026-07-21</span>
